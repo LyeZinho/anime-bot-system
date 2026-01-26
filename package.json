@@ -1,0 +1,50 @@
+{
+  "name": "anime-bot-system",
+  "version": "1.0.0",
+  "description": "Sistema de bot waifu de anime estilo Mudae/Bongo",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "dev": "tsx watch src/index.ts",
+    "db:generate": "prisma generate",
+    "db:push": "prisma db push",
+    "db:migrate": "prisma migrate dev",
+    "db:studio": "prisma studio",
+    "db:seed": "tsx prisma/seed.ts",
+    "docker:up": "docker-compose up -d",
+    "docker:down": "docker-compose down",
+    "docker:logs": "docker-compose logs -f",
+    "lint": "eslint src --ext .ts",
+    "format": "prettier --write \"src/**/*.ts\""
+  },
+  "keywords": [
+    "discord",
+    "bot",
+    "anime",
+    "waifu",
+    "gacha"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@prisma/client": "^5.22.0",
+    "axios": "^1.6.5",
+    "canvas": "^2.11.2",
+    "cron": "^3.1.6",
+    "danbooru-sdk": "^1.1.0",
+    "discord.js": "^14.14.1",
+    "dotenv": "^16.3.1",
+    "redis": "^4.6.12"
+  },
+  "devDependencies": {
+    "@types/node": "^20.10.6",
+    "@typescript-eslint/eslint-plugin": "^6.18.0",
+    "@typescript-eslint/parser": "^6.18.0",
+    "eslint": "^8.56.0",
+    "prettier": "^3.2.2",
+    "prisma": "^5.22.0",
+    "tsx": "^4.7.0",
+    "typescript": "^5.3.3"
+  }
+}

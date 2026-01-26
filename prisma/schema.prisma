@@ -1,0 +1,301 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// ==================== ENUMS ====================
+
+enum Rarity {
+  common
+  uncommon
+  rare
+  epic
+  legendary
+}
+
+enum WorkType {
+  anime
+  manga
+  game
+  visual_novel
+  light_novel
+  other
+}
+
+enum TradeStatus {
+  PENDING
+  COMPLETED
+  CANCELLED
+}
+
+enum BattleStatus {
+  PENDING
+  IN_PROGRESS
+  FINISHED
+  CANCELLED
+}
+
+// ==================== USERS ====================
+
+model User {
+  id          String   @id // Discord User ID
+  username    String
+  coins       Int      @default(1000)
+  bank        Int      @default(0)
+  dailyStreak Int      @default(0)
+  lastDaily   DateTime?
+  lastRoll    DateTime?
+  lastWork    DateTime?
+  rollsUsed   Int      @default(0)
+  claimsUsed  Int      @default(0)
+  lastClaimReset DateTime?
+  
+  // Battle stats
+  battleWins    Int @default(0)
+  battleLosses  Int @default(0)
+  battleRating  Int @default(1000)
+  
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  // Relations
+  characters      UserCharacter[]
+  wishlist        Wishlist[]
+  sentTrades      Trade[]         @relation("TradeSender")
+  receivedTrades  Trade[]         @relation("TradeReceiver")
+  challengedBattles Battle[]      @relation("BattleChallenger")
+  opponentBattles   Battle[]      @relation("BattleOpponent")
+  wonBattles      Battle[]        @relation("BattleWinner")
+  sentGifts       Gift[]          @relation("GiftSender")
+  receivedGifts   Gift[]          @relation("GiftReceiver")
+  luckyHistory    LuckyHistory[]
+  draftHistory    DraftHistory[]
+  items           Item[]
+
+  @@map("users")
+}
+
+// ==================== CHARACTERS ====================
+
+model Character {
+  id          Int      @id @default(autoincrement())
+  apiId       String?  @unique // ID from CharLib API
+  name        String
+  rarity      Rarity   @default(common)
+  imageUrl    String?
+  workName    String?
+  workType    WorkType?
+  createdAt   DateTime @default(now())
+
+  versions    CharacterVersion[]
+  owners      UserCharacter[]
+  wishlist    Wishlist[]
+
+  @@map("characters")
+}
+
+model CharacterVersion {
+  id          Int      @id @default(autoincrement())
+  characterId Int
+  name        String?  // Version name (e.g., "School Uniform", "Beach")
+  imageUrl    String?
+  createdAt   DateTime @default(now())
+
+  character   Character       @relation(fields: [characterId], references: [id], onDelete: Cascade)
+  owners      UserCharacter[]
+
+  @@map("character_versions")
+}
+
+model UserCharacter {
+  id          Int      @id @default(autoincrement())
+  userId      String
+  characterId Int
+  versionId   Int?
+  obtainedAt  DateTime @default(now())
+  favorite    Boolean  @default(false)
+
+  user        User              @relation(fields: [userId], references: [id], onDelete: Cascade)
+  character   Character         @relation(fields: [characterId], references: [id], onDelete: Cascade)
+  version     CharacterVersion? @relation(fields: [versionId], references: [id], onDelete: SetNull)
+  tradeItems  TradeItem[]
+
+  @@unique([userId, characterId, versionId])
+  @@map("user_characters")
+}
+
+// ==================== WISHLIST ====================
+
+model Wishlist {
+  id          Int      @id @default(autoincrement())
+  userId      String
+  characterId Int
+  createdAt   DateTime @default(now())
+
+  user        User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  character   Character @relation(fields: [characterId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, characterId])
+  @@map("wishlists")
+}
+
+// ==================== SPAWNS ====================
+
+model ActiveSpawn {
+  id          Int      @id @default(autoincrement())
+  guildId     String
+  channelId   String
+  messageId   String?
+  characterId Int
+  versionId   Int?
+  expiresAt   DateTime
+  claimedBy   String?
+  createdAt   DateTime @default(now())
+
+  @@index([guildId, channelId])
+  @@map("active_spawns")
+}
+
+// ==================== TRADING ====================
+
+model Trade {
+  id          Int         @id @default(autoincrement())
+  senderId    String
+  receiverId  String
+  status      TradeStatus @default(PENDING)
+  createdAt   DateTime    @default(now())
+  updatedAt   DateTime    @updatedAt
+
+  sender      User        @relation("TradeSender", fields: [senderId], references: [id], onDelete: Cascade)
+  receiver    User        @relation("TradeReceiver", fields: [receiverId], references: [id], onDelete: Cascade)
+  items       TradeItem[]
+
+  @@map("trades")
+}
+
+model TradeItem {
+  id              Int      @id @default(autoincrement())
+  tradeId         Int
+  userCharacterId Int
+  isFromSender    Boolean
+
+  trade         Trade         @relation(fields: [tradeId], references: [id], onDelete: Cascade)
+  userCharacter UserCharacter @relation(fields: [userCharacterId], references: [id], onDelete: Cascade)
+
+  @@map("trade_items")
+}
+
+// ==================== BATTLES ====================
+
+model Battle {
+  id            Int          @id @default(autoincrement())
+  challengerId  String
+  opponentId    String
+  winnerId      String?
+  status        BattleStatus @default(PENDING)
+  createdAt     DateTime     @default(now())
+  finishedAt    DateTime?
+
+  challenger    User         @relation("BattleChallenger", fields: [challengerId], references: [id], onDelete: Cascade)
+  opponent      User         @relation("BattleOpponent", fields: [opponentId], references: [id], onDelete: Cascade)
+  winner        User?        @relation("BattleWinner", fields: [winnerId], references: [id], onDelete: SetNull)
+
+  @@map("battles")
+}
+
+// ==================== ITEMS & SHOP ====================
+
+model Item {
+  id          Int      @id @default(autoincrement())
+  userId      String
+  type        String   // Item type ID (e.g., "roll_reset", "claim_reset")
+  name        String
+  quantity    Int      @default(1)
+  createdAt   DateTime @default(now())
+
+  user        User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, type])
+  @@map("items")
+}
+
+model ShopItem {
+  id          Int      @id @default(autoincrement())
+  type        String   @unique // Item type ID
+  name        String
+  description String
+  emoji       String
+  price       Int
+  stock       Int?     // null = infinite
+  isActive    Boolean  @default(true)
+  createdAt   DateTime @default(now())
+
+  @@map("shop_items")
+}
+
+// ==================== GIFTS ====================
+
+model Gift {
+  id          Int      @id @default(autoincrement())
+  senderId    String
+  receiverId  String
+  amount      Int
+  message     String?
+  createdAt   DateTime @default(now())
+
+  sender      User     @relation("GiftSender", fields: [senderId], references: [id], onDelete: Cascade)
+  receiver    User     @relation("GiftReceiver", fields: [receiverId], references: [id], onDelete: Cascade)
+
+  @@map("gifts")
+}
+
+// ==================== MINIGAMES ====================
+
+model LuckyHistory {
+  id          Int      @id @default(autoincrement())
+  userId      String
+  bet         Int
+  result      String   // "jackpot", "bigWin", "win", "lose"
+  payout      Int
+  createdAt   DateTime @default(now())
+
+  user        User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@map("lucky_history")
+}
+
+model DraftHistory {
+  id          Int      @id @default(autoincrement())
+  userId      String
+  picks       Json     // Array of character IDs picked
+  score       Int
+  createdAt   DateTime @default(now())
+
+  user        User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@map("draft_history")
+}
+
+// ==================== GUILD SETTINGS ====================
+
+model GuildSettings {
+  id              String   @id // Guild ID
+  prefix          String   @default("!")
+  spawnChannelId  String?
+  logChannelId    String?
+  language        String   @default("pt-BR")
+  rollsPerHour    Int      @default(11)
+  claimsPerDay    Int      @default(3)
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+
+  @@map("guild_settings")
+}
+
