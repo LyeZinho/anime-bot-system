@@ -44,7 +44,7 @@
       <div class="hero-image-wrapper">
         <div class="hero-image neobrutal-card rotate-3 animate-float">
           <img 
-            src="https://images.alphacoders.com/124/1246533.jpg" 
+            src="/nazuna.jpg" 
             alt="Nazuna Hero"
             referrerPolicy="no-referrer"
           />
