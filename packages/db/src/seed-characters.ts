@@ -6,7 +6,21 @@ export async function seedCharacters() {
   console.log('🌱 Seeding characters...');
 
   const dataDir = join(__dirname, '../../../data/unified/characters');
-  const files = readdirSync(dataDir).filter(f => f.endsWith('.json'));
+  let files: string[] = [];
+  
+  try {
+    files = readdirSync(dataDir).filter(f => f.endsWith('.json'));
+  } catch (e) {
+    console.warn(`   ⚠️  Data directory not found or empty: ${dataDir}`);
+    console.log(`✅ Seeded 0 characters!`);
+    return;
+  }
+  
+  if (files.length === 0) {
+    console.warn('   ⚠️  No JSON files found in characters directory');
+    console.log(`✅ Seeded 0 characters!`);
+    return;
+  }
 
   const personalityType = await db.query.categoryTypes.findFirst({
     where: eq(categoryTypes.name, 'personality_trait')

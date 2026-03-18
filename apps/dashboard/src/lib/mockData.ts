@@ -55,11 +55,9 @@ export function getMockVolume(months: number = 6) {
 export function getMockStats() {
   return {
     totalCharacters: 12450,
-    totalUsers: 15420,
-    totalServers: 1240,
-    totalSpins: 1250430,
-    totalObtained: 850200,
-    totalWorks: 3200,
+    activeUsers: 15420,
+    servers: 1240,
+    collections: 1250430,
   };
 }
 

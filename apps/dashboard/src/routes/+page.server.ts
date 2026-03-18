@@ -14,14 +14,17 @@ export const load: PageServerLoad = async ({ fetch }) => {
       const rankings = await rankingsRes.json();
       const characters = await charactersRes.json();
       
+      // Ensure stats is always defined
+      const stats = {
+        totalCharacters: characters.pagination?.total || 0,
+        activeUsers: 85420,
+        servers: 1240,
+        collections: 1250000,
+      };
+      
       return {
         topCharacters: (rankings.data || []).slice(0, 4),
-        stats: {
-          totalCharacters: characters.pagination?.total || 12450,
-          activeUsers: 85420,
-          servers: 1240,
-          collections: 1250000,
-        },
+        stats,
         source: 'api' as const,
       };
     }
