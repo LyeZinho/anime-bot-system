@@ -1,24 +1,20 @@
 # Coolify-specific overrides
-# Copy this file to docker-compose.yml or use it with -f flag
+# Ports range: 6050-6059
 
 version: '3.8'
 
 services:
   postgres:
     ports:
-      - "65432:5432"
-    volumes:
-      - postgres_data:/var/lib/postgresql/data
+      - "6050:5432"
 
   redis:
     ports:
-      - "63791:6379"
+      - "6051:6379"
 
   api:
     ports:
-      - "3071:3071"
-    env_file:
-      - .env
+      - "6052:3071"
 
   bot:
     env_file:
@@ -26,6 +22,8 @@ services:
 
   dashboard:
     ports:
-      - "3173:3173"
-    env_file:
-      - .env
+      - "6053:3173"
+
+networks:
+  default:
+    name: coolify
