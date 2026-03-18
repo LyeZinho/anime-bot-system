@@ -71,9 +71,9 @@
           <h2>Your Collection</h2>
         </div>
         <div class="collection-grid">
-          {#each collection as char (char.anilistId || char.id)}
+          {#each collection as char, index (char.anilistId ?? char.id ?? `col-${index}`)}
             <CharacterCard 
-              id={char.anilistId || char.id}
+              id={char.anilistId ?? char.id ?? index}
               name={char.name}
               series={char.work?.title || char.series}
               image={char.imageUrl || char.image}
@@ -95,9 +95,9 @@
           <h2>Favorites</h2>
         </div>
         <div class="collection-grid">
-          {#each favorites as char (char.anilistId || char.id)}
+          {#each favorites as char, index (char.anilistId ?? char.id ?? `fav-${index}`)}
             <CharacterCard 
-              id={char.anilistId || char.id}
+              id={char.anilistId ?? char.id ?? index}
               name={char.name}
               series={char.work?.title || char.series}
               image={char.imageUrl || char.image}

@@ -280,8 +280,8 @@
       </div>
       
       <div class="related-grid">
-        {#each data.related as relatedChar (relatedChar.id || relatedChar.anilistId)}
-          <a href="/characters/{relatedChar.id || relatedChar.anilistId}" class="related-card neobrutal-card">
+        {#each data.related as relatedChar, index (relatedChar.id ?? relatedChar.anilistId ?? `related-${index}`)}
+          <a href="/characters/{relatedChar.id ?? relatedChar.anilistId ?? index}" class="related-card neobrutal-card">
             <div class="related-image">
               <img 
                 src={relatedChar.imageUrl || relatedChar.image || `https://picsum.photos/seed/${relatedChar.name}/600/800`}

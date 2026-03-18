@@ -57,7 +57,7 @@
   
   <!-- Rankings List -->
   <div class="rankings-list">
-    {#each data.rankings as char, index (char.id || char.anilistId)}
+    {#each data.rankings as char, index (char.id ?? char.anilistId ?? `rank-${index}`)}
       <div class="ranking-item neobrutal-card">
         <div class="rank" class:top-rank={index < 3}>#{(data.pagination.page - 1) * data.pagination.limit + index + 1}</div>
         

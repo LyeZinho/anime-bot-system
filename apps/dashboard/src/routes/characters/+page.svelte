@@ -200,9 +200,9 @@
       
       {#if filteredCharacters.length > 0}
         <div class="characters-grid">
-          {#each displayedCharacters as char (char.id || char.anilistId)}
+          {#each displayedCharacters as char, index (char.id ?? char.anilistId ?? `char-${index}`)}
             <CharacterCard 
-              id={char.id || char.anilistId}
+              id={char.id ?? char.anilistId ?? index}
               name={char.name}
               series={char.series || char.work?.title}
               image={char.imageUrl || char.image}

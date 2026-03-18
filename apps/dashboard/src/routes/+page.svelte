@@ -107,9 +107,9 @@
     </div>
     
     <div class="characters-grid">
-      {#each data.topCharacters as char (char.id)}
+      {#each data.topCharacters as char, index}
         <CharacterCard 
-          id={char.id || char.anilistId}
+          id={char.id ?? char.anilistId ?? `char-${index}`}
           name={char.name}
           series={char.series || char.work?.title}
           image={char.imageUrl || char.image}
