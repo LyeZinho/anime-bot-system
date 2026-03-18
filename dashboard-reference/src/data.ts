@@ -1,0 +1,256 @@
+import { Character } from './types';
+
+const generateTrend = (base: number) => [
+  { date: '2024-01', value: base * 0.8 },
+  { date: '2024-02', value: base * 0.9 },
+  { date: '2024-03', value: base },
+  { date: '2024-04', value: base * 1.1 },
+  { date: '2024-05', value: base * 1.3 },
+  { date: '2024-06', value: base * 1.2 },
+];
+
+export const MOCK_CHARACTERS: Character[] = [
+  { 
+    id: 1, 
+    name: "Nazuna Nanakusa", 
+    series: "Yofukashi no Uta", 
+    image: "https://images.alphacoders.com/124/1246533.jpg", 
+    rank: 1, 
+    rating: 5.0, 
+    rarity: 'Legendary',
+    description: "A vampire who loves the night and enjoys meeting people who stay up late. She's free-spirited and often teases others.",
+    gender: "Female",
+    personality: "Playful, Free-spirited",
+    hairColor: "Pink",
+    views: 125000,
+    trend: generateTrend(125000)
+  },
+  { 
+    id: 2, 
+    name: "Makima", 
+    series: "Chainsaw Man", 
+    image: "https://images.alphacoders.com/112/1127042.jpg", 
+    rank: 2, 
+    rating: 4.9, 
+    rarity: 'Legendary',
+    description: "A high-ranking Public Safety Devil Hunter who took Denji as her human pet.",
+    gender: "Female",
+    personality: "Calculating, Dominant",
+    hairColor: "Red",
+    views: 98000,
+    trend: generateTrend(98000)
+  },
+  { 
+    id: 3, 
+    name: "Power", 
+    series: "Chainsaw Man", 
+    image: "https://images.alphacoders.com/114/1148671.jpg", 
+    rank: 3, 
+    rating: 4.8, 
+    rarity: 'Epic',
+    description: "A Blood Fiend and a Public Safety Devil Hunter who is part of Makima's special squad.",
+    gender: "Female",
+    personality: "Wild, Narcissistic",
+    hairColor: "Blonde",
+    views: 85000,
+    trend: generateTrend(85000)
+  },
+  { 
+    id: 4, 
+    name: "Yor Forger", 
+    series: "Spy x Family", 
+    image: "https://images.alphacoders.com/123/1231683.jpg", 
+    rank: 4, 
+    rating: 4.7, 
+    rarity: 'Epic',
+    description: "A professional assassin who works under the codename 'Thorn Princess' and is the adoptive mother of Anya Forger.",
+    gender: "Female",
+    personality: "Kind, Lethal",
+    hairColor: "Black",
+    views: 72000,
+    trend: generateTrend(72000)
+  },
+  { 
+    id: 5, 
+    name: "Marin Kitagawa", 
+    series: "My Dress-Up Darling", 
+    image: "https://images.alphacoders.com/121/1215160.jpg", 
+    rank: 5, 
+    rating: 4.6, 
+    rarity: 'Rare',
+    description: "A high school girl who loves anime and cosplay, and asks Wakana Gojo to help her make costumes.",
+    gender: "Female",
+    personality: "Energetic, Otaku",
+    hairColor: "Blonde",
+    views: 65000,
+    trend: generateTrend(65000)
+  },
+  { 
+    id: 6, 
+    name: "Chisato Nishikigi", 
+    series: "Lycoris Recoil", 
+    image: "https://images.alphacoders.com/124/1245645.jpg", 
+    rank: 6, 
+    rating: 4.5, 
+    rarity: 'Rare',
+    description: "A free-spirited Lycoris who works at the LycoReco cafe and refuses to kill her enemies.",
+    gender: "Female",
+    personality: "Cheerful, Skilled",
+    hairColor: "Blonde",
+    views: 58000,
+    trend: generateTrend(58000)
+  },
+  { 
+    id: 7, 
+    name: "Anya Forger", 
+    series: "Spy x Family", 
+    image: "https://images.alphacoders.com/123/1231684.jpg", 
+    rank: 7, 
+    rating: 4.4, 
+    rarity: 'Common',
+    description: "A telepathic girl who was adopted by Loid Forger and Yor Forger.",
+    gender: "Female",
+    personality: "Cute, Telepathic",
+    hairColor: "Pink",
+    views: 52000,
+    trend: generateTrend(52000)
+  },
+  { 
+    id: 8, 
+    name: "Hitori Gotoh", 
+    series: "Bocchi the Rock!", 
+    image: "https://images.alphacoders.com/128/1286532.jpg", 
+    rank: 8, 
+    rating: 4.3, 
+    rarity: 'Common',
+    description: "A socially anxious high school girl who plays the guitar and joins the Kessoku Band.",
+    gender: "Female",
+    personality: "Anxious, Talented",
+    hairColor: "Pink",
+    views: 48000,
+    trend: generateTrend(48000)
+  },
+  { 
+    id: 9, 
+    name: "Loid Forger", 
+    series: "Spy x Family", 
+    image: "https://images.alphacoders.com/123/1231682.jpg", 
+    rank: 9, 
+    rating: 4.2, 
+    rarity: 'Epic',
+    description: "A spy who works for Westalis' intelligence agency, WISE, and has to create a fake family to fulfill a mission.",
+    gender: "Male",
+    personality: "Calculated, Caring",
+    hairColor: "Blonde",
+    views: 45000,
+    trend: generateTrend(45000)
+  },
+  { 
+    id: 10, 
+    name: "Denji", 
+    series: "Chainsaw Man", 
+    image: "https://images.alphacoders.com/112/1127041.jpg", 
+    rank: 10, 
+    rating: 4.1, 
+    rarity: 'Rare',
+    description: "A young man who becomes the Chainsaw Man after merging with his pet devil, Pochita.",
+    gender: "Male",
+    personality: "Simple, Determined",
+    hairColor: "Blonde",
+    views: 42000,
+    trend: generateTrend(42000)
+  },
+  { 
+    id: 11, 
+    name: "Kaguya Shinomiya", 
+    series: "Kaguya-sama: Love is War", 
+    image: "https://images.alphacoders.com/101/1014567.jpg", 
+    rank: 11, 
+    rating: 4.0, 
+    rarity: 'Legendary',
+    description: "The vice-president of Shuchiin Academy's student council and a member of the wealthy Shinomiya family.",
+    gender: "Female",
+    personality: "Genius, Proud",
+    hairColor: "Black",
+    views: 40000,
+    trend: generateTrend(40000)
+  },
+  { 
+    id: 12, 
+    name: "Miyuki Shirogane", 
+    series: "Kaguya-sama: Love is War", 
+    image: "https://images.alphacoders.com/101/1014568.jpg", 
+    rank: 12, 
+    rating: 3.9, 
+    rarity: 'Epic',
+    description: "The president of Shuchiin Academy's student council and a hardworking student from a modest background.",
+    gender: "Male",
+    personality: "Hardworking, Diligent",
+    hairColor: "Blonde",
+    views: 38000,
+    trend: generateTrend(38000)
+  },
+  { 
+    id: 13, 
+    name: "Unknown Character", 
+    series: "Mystery Series", 
+    image: "", // Missing image
+    rank: 13, 
+    rating: 3.0, 
+    rarity: 'Common',
+    description: "A character with a missing image to test placeholder logic.",
+    gender: "Other",
+    personality: "Mysterious",
+    hairColor: "Unknown",
+    views: 1000,
+    trend: generateTrend(1000)
+  },
+  // Adding more characters for infinite scroll
+  ...Array.from({ length: 20 }).map((_, i) => ({
+    id: 14 + i,
+    name: `Character ${14 + i}`,
+    series: "Infinite Series",
+    image: `https://picsum.photos/seed/char${14 + i}/600/800`,
+    rank: 14 + i,
+    rating: 3.5 + Math.random(),
+    rarity: ['Common', 'Rare', 'Epic', 'Legendary'][Math.floor(Math.random() * 4)] as any,
+    description: "A character generated for infinite scroll testing.",
+    gender: ["Male", "Female", "Other"][Math.floor(Math.random() * 3)],
+    personality: "Random",
+    hairColor: ["Black", "Blonde", "Pink", "Red"][Math.floor(Math.random() * 4)],
+    views: Math.floor(Math.random() * 50000),
+    trend: generateTrend(Math.floor(Math.random() * 50000))
+  }))
+];
+
+export const MOCK_STATS = {
+  totalUsers: 15420,
+  totalServers: 1240,
+  totalCharacters: 12450,
+  totalWorks: 3200,
+  totalSpins: 1250430,
+  totalObtained: 850200,
+};
+
+export const MOCK_LEDGER = [
+  { id: '1', userId: 'user1', username: 'Pedro', action: 'roulette_spin', character: 'Nazuna Nanakusa', time: '2 mins ago' },
+  { id: '2', userId: 'user2', username: 'Kaleb', action: 'character_obtained', character: 'Makima', time: '5 mins ago' },
+  { id: '3', userId: 'user3', username: 'Alex', action: 'favorite_added', character: 'Power', time: '12 mins ago' },
+  { id: '4', userId: 'user4', username: 'Sarah', action: 'rating_submitted', character: 'Yor Forger', time: '15 mins ago' },
+  { id: '5', userId: 'user5', username: 'Mike', action: 'character_traded', character: 'Marin Kitagawa', time: '22 mins ago' },
+];
+
+export const MOCK_DISTRIBUTION = {
+  gender: [
+    { name: 'Female', value: 65 },
+    { name: 'Male', value: 30 },
+    { name: 'Non-binary', value: 3 },
+    { name: 'Other', value: 2 },
+  ],
+  role: [
+    { name: 'Protagonist', value: 40 },
+    { name: 'Supporting', value: 35 },
+    { name: 'Antagonist', value: 15 },
+    { name: 'Other', value: 10 },
+  ]
+};
