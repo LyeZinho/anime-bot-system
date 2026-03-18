@@ -1,0 +1,255 @@
+[Nest] 1  - 03/18/2026, 4:37:00 PM     LOG ;5;3m[NestFactory] Starting Nest application...
+[Nest] 1  - 03/18/2026, 4:37:00 PM     LOG ;5;3m[InstanceLoader] AppModule dependencies initialized;5;3m +27ms
+[Nest] 1  - 03/18/2026, 4:37:00 PM     LOG ;5;3m[InstanceLoader] ThrottlerModule dependencies initialized;5;3m +1ms
+[Nest] 1  - 03/18/2026, 4:37:00 PM     LOG ;5;3m[InstanceLoader] ConfigHostModule dependencies initialized;5;3m +0ms
+[Nest] 1  - 03/18/2026, 4:37:00 PM     LOG ;5;3m[InstanceLoader] WorksModule dependencies initialized;5;3m +0ms
+[Nest] 1  - 03/18/2026, 4:37:00 PM     LOG ;5;3m[InstanceLoader] ConfigModule dependencies initialized;5;3m +1ms
+[Nest] 1  - 03/18/2026, 4:37:00 PM     LOG ;5;3m[InstanceLoader] CharactersModule dependencies initialized;5;3m +1ms
+[Nest] 1  - 03/18/2026, 4:37:00 PM     LOG ;5;3m[InstanceLoader] UsersModule dependencies initialized;5;3m +1ms
+[Nest] 1  - 03/18/2026, 4:37:00 PM     LOG ;5;3m[InstanceLoader] CollectionsModule dependencies initialized;5;3m +0ms
+[Nest] 1  - 03/18/2026, 4:37:00 PM     LOG ;5;3m[InstanceLoader] FavoritesModule dependencies initialized;5;3m +0ms
+[Nest] 1  - 03/18/2026, 4:37:00 PM     LOG ;5;3m[InstanceLoader] RatingsModule dependencies initialized;5;3m +0ms
+[Nest] 1  - 03/18/2026, 4:37:00 PM     LOG ;5;3m[InstanceLoader] RankingsModule dependencies initialized;5;3m +0ms
+[Nest] 1  - 03/18/2026, 4:37:00 PM     LOG ;5;3m[InstanceLoader] LedgerModule dependencies initialized;5;3m +0ms
+[Nest] 1  - 03/18/2026, 4:37:00 PM     LOG ;5;3m[InstanceLoader] DatabaseModule dependencies initialized;5;3m +1ms
+[Nest] 1  - 03/18/2026, 4:37:00 PM     LOG ;5;3m[InstanceLoader] WebhooksModule dependencies initialized;5;3m +0ms
+[Nest] 1  - 03/18/2026, 4:37:00 PM     LOG ;5;3m[InstanceLoader] JwtModule dependencies initialized;5;3m +0ms
+[Nest] 1  - 03/18/2026, 4:37:00 PM     LOG ;5;3m[InstanceLoader] AuthModule dependencies initialized;5;3m +0ms
+[Nest] 1  - 03/18/2026, 4:37:00 PM     LOG ;5;3m[DatabaseMigrationService] Running database migrations...
+[Nest] 1  - 03/18/2026, 4:37:00 PM     LOG ;5;3m[DatabaseMigrationService] 🔄 Running database migrations...
+{
+  severity_local: 'NOTICE',
+  severity: 'NOTICE',
+  code: '42P06',
+  message: 'schema "drizzle" already exists, skipping',
+  file: 'schemacmds.c',
+  line: '132',
+  routine: 'CreateSchemaCommand'
+}
+{
+  severity_local: 'NOTICE',
+  severity: 'NOTICE',
+  code: '42P07',
+  message: 'relation "__drizzle_migrations" already exists, skipping',
+  file: 'parse_utilcmd.c',
+  line: '207',
+  routine: 'transformCreateStmt'
+}
+✅ Migrations completed successfully!
+[Nest] 1  - 03/18/2026, 4:37:00 PM     LOG ;5;3m[DatabaseMigrationService] Schema migration completed
+[Nest] 1  - 03/18/2026, 4:37:00 PM     LOG ;5;3m[DatabaseMigrationService] Running database seeds...
+[Nest] 1  - 03/18/2026, 4:37:35 PM     LOG ;5;3m[DatabaseMigrationService] 🎲 Running all seeds...
+
+1. Categories
+🌱 Seeding categories...
+   Category personality_trait already exists
+   Category hair_color already exists
+   Category eye_color already exists
+   Category body_type already exists
+   Category archetype already exists
+   Category genre already exists
+   Category work_format already exists
+✅ Categories seeded!
+
+2. Works
+🌱 Seeding works...
+   Processed 50/367 works
+   Processed 100/367 works
+   Processed 150/367 works
+   Processed 200/367 works
+   Processed 250/367 works
+   Processed 300/367 works
+   Processed 350/367 works
+✅ Seeded 367 works!
+
+3. Characters
+🌱 Seeding characters...
+   Processed 100/8902 characters
+   Processed 200/8902 characters
+   Processed 300/8902 characters
+   Processed 400/8902 characters
+   Processed 500/8902 characters
+   Processed 600/8902 characters
+   Processed 700/8902 characters
+   Processed 800/8902 characters
+   Processed 900/8902 characters
+   Processed 1000/8902 characters
+   Processed 1100/8902 characters
+   Processed 1200/8902 characters
+   Processed 1300/8902 characters
+   Processed 1400/8902 characters
+   Processed 1500/8902 characters
+   Processed 1600/8902 characters
+   Processed 1700/8902 characters
+   Processed 1800/8902 characters
+   Processed 1900/8902 characters
+   Processed 2000/8902 characters
+   Processed 2100/8902 characters
+   Processed 2200/8902 characters
+   Processed 2300/8902 characters
+   Processed 2400/8902 characters
+   Processed 2500/8902 characters
+   Processed 2600/8902 characters
+   Processed 2700/8902 characters
+   Processed 2800/8902 characters
+   Processed 2900/8902 characters
+   Processed 3000/8902 characters
+   Processed 3100/8902 characters
+   Processed 3200/8902 characters
+   Processed 3300/8902 characters
+   Processed 3400/8902 characters
+   Processed 3500/8902 characters
+   Processed 3600/8902 characters
+   Processed 3700/8902 characters
+   Processed 3800/8902 characters
+   Processed 3900/8902 characters
+   Processed 4000/8902 characters
+   Processed 4100/8902 characters
+   Processed 4200/8902 characters
+   Processed 4300/8902 characters
+   Processed 4400/8902 characters
+   Processed 4500/8902 characters
+   Processed 4600/8902 characters
+   Processed 4700/8902 characters
+   Processed 4800/8902 characters
+   Processed 4900/8902 characters
+   Processed 5000/8902 characters
+   Processed 5100/8902 characters
+   Processed 5200/8902 characters
+   Processed 5300/8902 characters
+   Processed 5400/8902 characters
+   Processed 5500/8902 characters
+   Processed 5600/8902 characters
+   Processed 5700/8902 characters
+   Processed 5800/8902 characters
+   Processed 5900/8902 characters
+   Processed 6000/8902 characters
+   Processed 6100/8902 characters
+   Processed 6200/8902 characters
+   Processed 6300/8902 characters
+   Processed 6400/8902 characters
+   Processed 6500/8902 characters
+   Processed 6600/8902 characters
+   Processed 6700/8902 characters
+   Processed 6800/8902 characters
+   Processed 6900/8902 characters
+   Processed 7000/8902 characters
+   Processed 7100/8902 characters
+   Processed 7200/8902 characters
+   Processed 7300/8902 characters
+   Processed 7400/8902 characters
+   Processed 7500/8902 characters
+   Processed 7600/8902 characters
+   Processed 7700/8902 characters
+   Processed 7800/8902 characters
+   Processed 7900/8902 characters
+   Processed 8000/8902 characters
+   Processed 8100/8902 characters
+   Processed 8200/8902 characters
+   Processed 8300/8902 characters
+   Processed 8400/8902 characters
+   Processed 8500/8902 characters
+   Processed 8600/8902 characters
+   Processed 8700/8902 characters
+   Processed 8800/8902 characters
+✅ Seeded 8846 characters! (56 errors)
+
+✅ All seeds completed!
+[Nest] 1  - 03/18/2026, 4:37:35 PM    WARN ;5;3m[DatabaseMigrationService] ❌ Error processing 0.003204078344857808.json: Missing required fields: anilistId=0, slug=naruto_aburame-shibi
+   ❌ Error processing 0.00631782873183484.json: Missing required fields: anilistId=0, slug=naruto_inuzuka-kiba
+   ❌ Error processing 0.009916725241169377.json: Missing required fields: anilistId=0, slug=one-piece-movie-01_tobio
+   ❌ Error processing 0.03194291539088567.json: Missing required fields: anilistId=0, slug=one-piece-movie-01_nami
+   ❌ Error processing 0.055298489805989615.json: Missing required fields: anilistId=0, slug=naruto_deidara
+   ❌ Error processing 0.06132815773911304.json: Missing required fields: anilistId=0, slug=naruto_fuuma-jigumo
+   ❌ Error processing 0.06886190031673012.json: Missing required fields: anilistId=0, slug=naruto_hakus-mother
+   ❌ Error processing 0.08799438540485338.json: Missing required fields: anilistId=0, slug=naruto_haruna
+   ❌ Error processing 0.10437665922841133.json: Missing required fields: anilistId=0, slug=one-piece_monkey-d-luffy
+   ❌ Error processing 0.1066702853209649.json: Missing required fields: anilistId=0, slug=naruto_jantou
+   ❌ Error processing 0.11686312504622165.json: Missing required fields: anilistId=0, slug=naruto_jiga
+   ❌ Error processing 0.11730596204503252.json: Missing required fields: anilistId=0, slug=naruto_hagane-kotetsu
+   ❌ Error processing 0.12552879155542307.json: Missing required fields: anilistId=0, slug=naruto_akame-iwana
+   ❌ Error processing 0.13180773294524073.json: Missing required fields: anilistId=0, slug=naruto_funeno-daikoku
+   ❌ Error processing 0.15391639739914853.json: Missing required fields: anilistId=0, slug=naruto_uchiha-sasuke
+   ❌ Error processing 0.15455990857544277.json: Missing required fields: anilistId=0, slug=naruto_hyuuga-hiashi
+   ❌ Error processing 0.1690051923037501.json: Missing required fields: anilistId=0, slug=naruto_hyuuga-neji
+   ❌ Error processing 0.17122689021884752.json: Missing required fields: anilistId=0, slug=naruto_genyuumaru
+   ❌ Error processing 0.18436267440876786.json: Missing required fields: anilistId=0, slug=naruto_hachidai
+   ❌ Error processing 0.18473180686216617.json: Missing required fields: anilistId=0, slug=naruto_hikyakuya-fukusuke
+   ❌ Error processing 0.19403138423676014.json: Missing required fields: anilistId=0, slug=naruto_bekkou
+   ❌ Error processing 0.20024395319826926.json: Missing required fields: anilistId=0, slug=naruto_akimichi-chouji
+   ❌ Error processing 0.20418715071797144.json: Missing required fields: anilistId=0, slug=naruto_hiruko
+   ❌ Error processing 0.21342384561087702.json: Missing required fields: anilistId=0, slug=naruto_haruno-sakura
+   ❌ Error processing 0.2205810577639905.json: Missing required fields: anilistId=0, slug=naruto_inuzuka-tsume
+   ❌ Error processing 0.22580909995865062.json: Missing required fields: anilistId=0, slug=naruto_fuki
+   ❌ Error processing 0.22610120555959845.json: Missing required fields: anilistId=0, slug=naruto_jiroubou
+   ❌ Error processing 0.24788133092239206.json: Missing required fields: anilistId=0, slug=one-piece_franky
+   ❌ Error processing 0.24800523444361844.json: Missing required fields: anilistId=0, slug=naruto_inari
+   ❌ Error processing 0.26250487082104035.json: Missing required fields: anilistId=0, slug=naruto_ayame
+   ❌ Error processing 0.26304978438231386.json: Missing required fields: anilistId=0, slug=naruto_hatake-kakashi
+   ❌ Error processing 0.27221945071537135.json: Missing required fields: anilistId=0, slug=naruto_jiraiya
+   ❌ Error processing 0.27717911600452627.json: Missing required fields: anilistId=0, slug=naruto_akio
+   ❌ Error processing 0.2807900897503305.json: Missing required fields: anilistId=0, slug=naruto_akado-yoroi
+   ❌ Error processing 0.303772324773362.json: Missing required fields: anilistId=0, slug=naruto_bisuke
+   ❌ Error processing 0.3042844764671021.json: Missing required fields: anilistId=0, slug=naruto_chikara
+   ❌ Error processing 0.31561519460609166.json: Missing required fields: anilistId=0, slug=naruto_amachi
+   ❌ Error processing 0.3222838500242493.json: Missing required fields: anilistId=0, slug=naruto_hostess-san
+   ❌ Error processing 0.3374267750863321.json: Missing required fields: anilistId=0, slug=naruto_fuuma-sasame
+   ❌ Error processing 0.34281143521337976.json: Missing required fields: anilistId=0, slug=naruto_akahoshi
+   ❌ Error processing 0.35144249322914556.json: Missing required fields: anilistId=0, slug=naruto_hoshigaki-kisame
+   ❌ Error processing 0.37847586014611956.json: Missing required fields: anilistId=0, slug=naruto_hanzaki
+   ❌ Error processing 0.3905138453669449.json: Missing required fields: anilistId=0, slug=naruto_dengaku
+   ❌ Error processing 0.39244020191050677.json: Missing required fields: anilistId=0, slug=naruto_gamatatsu
+   ❌ Error processing 0.3958076127798442.json: Missing required fields: anilistId=0, slug=one-piece-movie-01_usopp
+   ❌ Error processing 0.3997439729766792.json: Missing required fields: anilistId=0, slug=naruto_hitode
+   ❌ Error processing 0.39997094141546274.json: Missing required fields: anilistId=0, slug=naruto_ami
+   ❌ Error processing 0.41973368151515034.json: Missing required fields: anilistId=0, slug=naruto_gosunkugi
+   ❌ Error processing 0.4203202797398663.json: Missing required fields: anilistId=0, slug=naruto_uzumaki-naruto
+   ❌ Error processing 0.42829263631814896.json: Missing required fields: anilistId=0, slug=naruto_gatsu
+   ❌ Error processing 0.43993600625948226.json: Missing required fields: anilistId=0, slug=naruto_hyuuga-hizashi
+   ❌ Error processing 0.4481012604017377.json: Missing required fields: anilistId=0, slug=one-piece-movie-01_narrator
+   ❌ Error processing 0.4491220110017551.json: Missing required fields: anilistId=0, slug=one-piece-movie-01_monkey-d-luffy
+   ❌ Error processing 0.47626259126066584.json: Missing required fields: anilistId=0, slug=naruto_hyuuga-hanabi
+   ❌ Error processing 0.49401867605370964.json: Missing required fields: anilistId=0, slug=one-piece-movie-01_golass
+   ❌ Error processing 0.49663042073575925.json: Missing required fields: anilistId=0, slug=naruto_hidan
+[Nest] 1  - 03/18/2026, 4:37:35 PM     LOG ;5;3m[DatabaseMigrationService] Seeds completed
+[Nest] 1  - 03/18/2026, 4:37:36 PM     LOG ;5;3m[RoutesResolver] AuthController {/api/v1/auth}:;5;3m +213ms
+[Nest] 1  - 03/18/2026, 4:37:36 PM     LOG ;5;3m[RouterExplorer] Mapped {/api/v1/auth/discord, POST} route;5;3m +4ms
+[Nest] 1  - 03/18/2026, 4:37:36 PM     LOG ;5;3m[RouterExplorer] Mapped {/api/v1/auth/api-key, POST} route;5;3m +0ms
+[Nest] 1  - 03/18/2026, 4:37:36 PM     LOG ;5;3m[RoutesResolver] CharactersController {/api/v1/characters}:;5;3m +0ms
+[Nest] 1  - 03/18/2026, 4:37:36 PM     LOG ;5;3m[RouterExplorer] Mapped {/api/v1/characters, GET} route;5;3m +1ms
+[Nest] 1  - 03/18/2026, 4:37:36 PM     LOG ;5;3m[RouterExplorer] Mapped {/api/v1/characters/random, GET} route;5;3m +0ms
+[Nest] 1  - 03/18/2026, 4:37:36 PM     LOG ;5;3m[RouterExplorer] Mapped {/api/v1/characters/:id, GET} route;5;3m +1ms
+[Nest] 1  - 03/18/2026, 4:37:36 PM     LOG ;5;3m[RouterExplorer] Mapped {/api/v1/characters/:id/metrics, GET} route;5;3m +0ms
+[Nest] 1  - 03/18/2026, 4:37:36 PM     LOG ;5;3m[RouterExplorer] Mapped {/api/v1/characters/:id/related, GET} route;5;3m +0ms
+[Nest] 1  - 03/18/2026, 4:37:36 PM     LOG ;5;3m[RouterExplorer] Mapped {/api/v1/characters/:id/volume, GET} route;5;3m +0ms
+[Nest] 1  - 03/18/2026, 4:37:36 PM     LOG ;5;3m[RoutesResolver] WorksController {/api/v1/works}:;5;3m +0ms
+[Nest] 1  - 03/18/2026, 4:37:36 PM     LOG ;5;3m[RouterExplorer] Mapped {/api/v1/works, GET} route;5;3m +2ms
+[Nest] 1  - 03/18/2026, 4:37:36 PM     LOG ;5;3m[RouterExplorer] Mapped {/api/v1/works/:id, GET} route;5;3m +0ms
+[Nest] 1  - 03/18/2026, 4:37:36 PM     LOG ;5;3m[RoutesResolver] UsersController {/api/v1/users}:;5;3m +0ms
+[Nest] 1  - 03/18/2026, 4:37:36 PM     LOG ;5;3m[RouterExplorer] Mapped {/api/v1/users/me, GET} route;5;3m +1ms
+[Nest] 1  - 03/18/2026, 4:37:36 PM     LOG ;5;3m[RouterExplorer] Mapped {/api/v1/users/me/favorites, GET} route;5;3m +1ms
+[Nest] 1  - 03/18/2026, 4:37:36 PM     LOG ;5;3m[RouterExplorer] Mapped {/api/v1/users/me/collections, GET} route;5;3m +0ms
+[Nest] 1  - 03/18/2026, 4:37:36 PM     LOG ;5;3m[RouterExplorer] Mapped {/api/v1/users/me/ratings, GET} route;5;3m +1ms
+[Nest] 1  - 03/18/2026, 4:37:36 PM     LOG ;5;3m[RouterExplorer] Mapped {/api/v1/users/:id, GET} route;5;3m +0ms
+[Nest] 1  - 03/18/2026, 4:37:36 PM     LOG ;5;3m[RoutesResolver] CollectionsController {/api/v1/collections}:;5;3m +0ms
+[Nest] 1  - 03/18/2026, 4:37:36 PM     LOG ;5;3m[RouterExplorer] Mapped {/api/v1/collections/:serverId, GET} route;5;3m +0ms
+[Nest] 1  - 03/18/2026, 4:37:36 PM     LOG ;5;3m[RouterExplorer] Mapped {/api/v1/collections, POST} route;5;3m +0ms
+[Nest] 1  - 03/18/2026, 4:37:36 PM     LOG ;5;3m[RoutesResolver] FavoritesController {/api/v1/favorites}:;5;3m +0ms
+[Nest] 1  - 03/18/2026, 4:37:36 PM     LOG ;5;3m[RouterExplorer] Mapped {/api/v1/favorites/:userId, GET} route;5;3m +1ms
+[Nest] 1  - 03/18/2026, 4:37:36 PM     LOG ;5;3m[RouterExplorer] Mapped {/api/v1/favorites, POST} route;5;3m +0ms
+[Nest] 1  - 03/18/2026, 4:37:36 PM     LOG ;5;3m[RouterExplorer] Mapped {/api/v1/favorites/:characterId, DELETE} route;5;3m +0ms
+[Nest] 1  - 03/18/2026, 4:37:36 PM     LOG ;5;3m[RoutesResolver] RatingsController {/api/v1/ratings}:;5;3m +0ms
+[Nest] 1  - 03/18/2026, 4:37:36 PM     LOG ;5;3m[RouterExplorer] Mapped {/api/v1/ratings/character/:id, GET} route;5;3m +0ms
+[Nest] 1  - 03/18/2026, 4:37:36 PM     LOG ;5;3m[RouterExplorer] Mapped {/api/v1/ratings, POST} route;5;3m +0ms
+[Nest] 1  - 03/18/2026, 4:37:36 PM     LOG ;5;3m[RoutesResolver] RankingsController {/api/v1/rankings}:;5;3m +0ms
+[Nest] 1  - 03/18/2026, 4:37:36 PM     LOG ;5;3m[RouterExplorer] Mapped {/api/v1/rankings/popularity, GET} route;5;3m +1ms
+[Nest] 1  - 03/18/2026, 4:37:36 PM     LOG ;5;3m[RouterExplorer] Mapped {/api/v1/rankings/ratings, GET} route;5;3m +0ms
+[Nest] 1  - 03/18/2026, 4:37:36 PM     LOG ;5;3m[RouterExplorer] Mapped {/api/v1/rankings/combined, GET} route;5;3m +0ms
+[Nest] 1  - 03/18/2026, 4:37:36 PM     LOG ;5;3m[RoutesResolver] LedgerController {/api/v1/ledger}:;5;3m +0ms
+[Nest] 1  - 03/18/2026, 4:37:36 PM     LOG ;5;3m[RouterExplorer] Mapped {/api/v1/ledger/user/:userId, GET} route;5;3m +0ms
+[Nest] 1  - 03/18/2026, 4:37:36 PM     LOG ;5;3m[RouterExplorer] Mapped {/api/v1/ledger/server/:serverId, GET} route;5;3m +0ms
+[Nest] 1  - 03/18/2026, 4:37:36 PM     LOG ;5;3m[RoutesResolver] WebhooksController {/api/v1/webhooks}:;5;3m +0ms
+[Nest] 1  - 03/18/2026, 4:37:36 PM     LOG ;5;3m[RouterExplorer] Mapped {/api/v1/webhooks/discord, POST} route;5;3m +1ms
+[Nest] 1  - 03/18/2026, 4:37:36 PM     LOG ;5;3m[NestApplication] Nest application successfully started;5;3m +3ms
+🚀 API running on http://localhost:3071
+📚 Swagger: http://localhost:3071/docs

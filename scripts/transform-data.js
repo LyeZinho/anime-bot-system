@@ -104,7 +104,13 @@ for (const animeFolder of animeDir) {
     }
 
     for (const char of charactersData.characters) {
-      const anilistCharId = char.external_ids?.anilist || Math.random();
+      // Use anilist ID or generate deterministic ID from slug + anime folder
+      const anilistCharId = char.external_ids?.anilist || null;
+      
+      // Skip characters without valid anilist IDs
+      if (!anilistCharId || typeof anilistCharId !== 'number' || anilistCharId <= 0) {
+        continue;
+      }
 
       const characterData = {
         anilistId: anilistCharId,
