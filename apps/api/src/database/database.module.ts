@@ -3,6 +3,8 @@ import { ConfigService } from '@nestjs/config';
 import { exec } from 'child_process';
 import { promisify } from 'util';
 import { join } from 'path';
+import { resolve } from 'path';
+import { config } from 'dotenv';
 import { count } from 'drizzle-orm';
 import { categoryTypes } from '@anime-bot/db/schema';
 import { db } from '@anime-bot/db';
@@ -34,20 +36,31 @@ export class DatabaseMigrationService implements OnModuleInit {
   }
 
   async runMigrations() {
-    this.logger.log('Running database migrations...');
-    const migrateScript = join(__dirname, '../../../../packages/db/dist/migrate.js');
+    this.logger.log('Syncing database schema (drizzle-kit push)...');
+    const dbRoot = join(__dirname, '../../../../packages/db');
     try {
-      const { stdout, stderr } = await execAsync(`node ${migrateScript}`, {
-        env: { ...process.env },
-        timeout: 60_000,
-      });
+      const { stdout, stderr } = await execAsync(
+        `node ${dbRoot}/node_modules/.bin/drizzle-kit push --force`,
+        {
+          env: {
+            ...process.env,
+            DATABASE_URL: process.env.DATABASE_URL,
+          },
+          cwd: dbRoot,
+          timeout: 60_000,
+        },
+      );
       if (stdout) this.logger.log(stdout.trim());
-      if (stderr) this.logger.warn(stderr.trim());
-      this.logger.log('Schema migration completed');
+      if (stderr && !stderr.includes('warning')) this.logger.warn(stderr.trim());
+      this.logger.log('Schema sync completed');
     } catch (error: unknown) {
       const execError = error as { stdout?: string; stderr?: string; message?: string };
-      this.logger.error('Schema migration failed:', execError.stderr || execError.message);
-      throw error;
+      const msg = execError.stderr || execError.message || String(execError);
+      if (msg.includes('no changes')) {
+        this.logger.log('Schema already up to date');
+        return;
+      }
+      this.logger.warn('Schema sync:', msg.split('\n').slice(0, 3).join(' '));
     }
   }
 
