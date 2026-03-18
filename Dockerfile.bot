@@ -1,6 +1,7 @@
 FROM node:20-alpine AS base
 RUN corepack enable && corepack prepare pnpm@9.0.0 --activate
 
+# ── Install ALL deps (dev + prod) for build ──
 FROM base AS deps
 WORKDIR /app
 COPY package.json pnpm-lock.yaml pnpm-workspace.yaml ./
@@ -8,24 +9,40 @@ COPY packages/db/package.json packages/db/
 COPY apps/bot/package.json apps/bot/
 RUN pnpm install --frozen-lockfile
 
+# ── Install PROD-only deps for runner ──
+FROM base AS prod-deps
+WORKDIR /app
+COPY package.json pnpm-lock.yaml pnpm-workspace.yaml ./
+COPY packages/db/package.json packages/db/
+COPY apps/bot/package.json apps/bot/
+RUN pnpm install --frozen-lockfile --prod
+
+# ── Build Bot ──
 FROM base AS builder
 WORKDIR /app
-COPY --from=deps /app/node_modules ./node_modules
-COPY --from=deps /app/apps/bot/node_modules ./apps/bot/node_modules
+COPY --from=deps /app/ ./
 COPY apps/bot ./apps/bot
 WORKDIR /app/apps/bot
 RUN pnpm build
 
-FROM base AS runner
+# ── Production runner ──
+FROM node:20-alpine AS runner
 WORKDIR /app
 ENV NODE_ENV=production
 
 RUN addgroup -g 1001 -S nodejs && \
     adduser -S nodejs -u 1001
 
-COPY --from=builder /app/apps/bot/dist ./dist
-COPY --from=builder /app/apps/bot/package.json ./package.json
-COPY --from=deps /app/apps/bot/node_modules ./node_modules
+# Copy built bot output
+COPY --from=builder /app/apps/bot/dist ./apps/bot/dist
+COPY --from=builder /app/apps/bot/package.json ./apps/bot/package.json
+
+# Copy prod node_modules (full pnpm virtual store from root)
+COPY --from=prod-deps /app/node_modules ./node_modules
+COPY --from=prod-deps /app/apps/bot/node_modules ./apps/bot/node_modules
+COPY --from=prod-deps /app/package.json ./package.json
+COPY --from=prod-deps /app/pnpm-workspace.yaml ./pnpm-workspace.yaml
 
 USER nodejs
+WORKDIR /app/apps/bot
 CMD ["node", "dist/index.js"]

@@ -1,31 +1,36 @@
 FROM node:20-alpine AS base
 RUN corepack enable && corepack prepare pnpm@9.0.0 --activate
 
+# ── Install ALL deps (dev + prod) for build ──
 FROM base AS deps
 WORKDIR /app
 COPY package.json pnpm-lock.yaml pnpm-workspace.yaml ./
+COPY packages/db/package.json packages/db/
 COPY apps/dashboard/package.json apps/dashboard/
 RUN pnpm install --frozen-lockfile
 
+# ── Build Dashboard ──
 FROM base AS builder
 WORKDIR /app
-COPY --from=deps /app/node_modules ./node_modules
-COPY --from=deps /app/apps/dashboard/node_modules ./apps/dashboard/node_modules
+COPY --from=deps /app/ ./
 COPY apps/dashboard ./apps/dashboard
 WORKDIR /app/apps/dashboard
 RUN pnpm build
 
-FROM base AS runner
+# ── Production runner ──
+FROM node:20-alpine AS runner
 WORKDIR /app
 ENV NODE_ENV=production
 
 RUN addgroup -g 1001 -S nodejs && \
     adduser -S nodejs -u 1001
 
+# adapter-node output is self-contained in build/
 COPY --from=builder /app/apps/dashboard/build ./build
 COPY --from=builder /app/apps/dashboard/package.json ./package.json
 
 USER nodejs
 EXPOSE 3173
 ENV HOST=0.0.0.0
+ENV PORT=3173
 CMD ["node", "build"]

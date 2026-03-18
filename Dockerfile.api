@@ -1,6 +1,7 @@
 FROM node:20-alpine AS base
 RUN corepack enable && corepack prepare pnpm@9.0.0 --activate
 
+# ── Install ALL deps (dev + prod) for build ──
 FROM base AS deps
 WORKDIR /app
 COPY package.json pnpm-lock.yaml pnpm-workspace.yaml ./
@@ -8,28 +9,46 @@ COPY packages/db/package.json packages/db/
 COPY apps/api/package.json apps/api/
 RUN pnpm install --frozen-lockfile
 
+# ── Install PROD-only deps for runner ──
+FROM base AS prod-deps
+WORKDIR /app
+COPY package.json pnpm-lock.yaml pnpm-workspace.yaml ./
+COPY packages/db/package.json packages/db/
+COPY apps/api/package.json apps/api/
+RUN pnpm install --frozen-lockfile --prod
+
+# ── Build API ──
 FROM base AS builder
 WORKDIR /app
-COPY --from=deps /app/node_modules ./node_modules
-COPY --from=deps /app/apps/api/node_modules ./apps/api/node_modules
-COPY --from=deps /app/packages/db/node_modules ./packages/db/node_modules
+COPY --from=deps /app/ ./
 COPY packages/db ./packages/db
 COPY apps/api ./apps/api
 WORKDIR /app/apps/api
 RUN pnpm build
 
-FROM base AS runner
+# ── Production runner ──
+FROM node:20-alpine AS runner
 WORKDIR /app
 ENV NODE_ENV=production
 
 RUN addgroup -g 1001 -S nodejs && \
     adduser -S nodejs -u 1001
 
-COPY --from=builder /app/apps/api/dist ./dist
-COPY --from=builder /app/apps/api/package.json ./package.json
-COPY --from=deps /app/apps/api/node_modules ./node_modules
-COPY --from=deps /app/packages/db ./packages/db
+# Copy built API output
+COPY --from=builder /app/apps/api/dist ./apps/api/dist
+COPY --from=builder /app/apps/api/package.json ./apps/api/package.json
+
+# Copy packages/db source (runtime import via file: link)
+COPY --from=builder /app/packages/db ./packages/db
+
+# Copy prod node_modules (full pnpm virtual store from root)
+COPY --from=prod-deps /app/node_modules ./node_modules
+COPY --from=prod-deps /app/apps/api/node_modules ./apps/api/node_modules
+COPY --from=prod-deps /app/packages/db/node_modules ./packages/db/node_modules
+COPY --from=prod-deps /app/package.json ./package.json
+COPY --from=prod-deps /app/pnpm-workspace.yaml ./pnpm-workspace.yaml
 
 USER nodejs
+WORKDIR /app/apps/api
 EXPOSE 3071
 CMD ["node", "dist/main.js"]
