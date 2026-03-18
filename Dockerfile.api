@@ -33,8 +33,6 @@ FROM node:20-alpine AS runner
 WORKDIR /app
 ENV NODE_ENV=production
 
-RUN corepack enable && corepack prepare pnpm@9.0.0 --activate
-
 RUN addgroup -g 1001 -S nodejs && \
     adduser -S nodejs -u 1001
 
@@ -42,10 +40,15 @@ RUN addgroup -g 1001 -S nodejs && \
 COPY --from=builder /app/apps/api/dist ./apps/api/dist
 COPY --from=builder /app/apps/api/package.json ./apps/api/package.json
 
-# Copy packages/db source (runtime import via file: link)
-COPY --from=builder /app/packages/db ./packages/db
+# Copy packages/db (compiled JS including migrate + seeds)
+COPY --from=builder /app/packages/db/dist ./packages/db/dist
+COPY --from=builder /app/packages/db/drizzle ./packages/db/drizzle
+COPY --from=builder /app/packages/db/package.json ./packages/db/package.json
 
-# Copy prod node_modules (full pnpm virtual store from root)
+# Copy seed data files (directly from build context, not needed at build time)
+COPY data/unified ./data/unified
+
+# Copy prod node_modules
 COPY --from=prod-deps /app/node_modules ./node_modules
 COPY --from=prod-deps /app/apps/api/node_modules ./apps/api/node_modules
 COPY --from=prod-deps /app/packages/db/node_modules ./packages/db/node_modules

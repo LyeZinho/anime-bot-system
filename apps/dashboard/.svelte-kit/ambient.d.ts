@@ -146,6 +146,7 @@ declare module '$env/static/private' {
 	export const npm_config_registry: string;
 	export const npm_node_execpath: string;
 	export const LC_NUMERIC: string;
+	export const OLDPWD: string;
 	export const KONSOLE_DBUS_WINDOW: string;
 	export const NODE_ENV: string;
 }
@@ -184,7 +185,7 @@ declare module '$env/static/private' {
  * The above values will be the same _even if_ different values for `ENVIRONMENT` or `PUBLIC_BASE_URL` are set at runtime, as they are statically replaced in your code with their build time values.
  */
 declare module '$env/static/public' {
-	
+	export const PUBLIC_API_URL: string;
 }
 
 /**
@@ -342,6 +343,7 @@ declare module '$env/dynamic/private' {
 		npm_config_registry: string;
 		npm_node_execpath: string;
 		LC_NUMERIC: string;
+		OLDPWD: string;
 		KONSOLE_DBUS_WINDOW: string;
 		NODE_ENV: string;
 		[key: `PUBLIC_${string}`]: undefined;
@@ -399,6 +401,7 @@ declare module '$env/dynamic/private' {
  */
 declare module '$env/dynamic/public' {
 	export const env: {
+		PUBLIC_API_URL: string;
 		[key: `PUBLIC_${string}`]: string | undefined;
 	}
 }

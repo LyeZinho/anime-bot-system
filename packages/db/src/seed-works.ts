@@ -2,10 +2,10 @@ import { db, works } from './index';
 import { readFileSync, readdirSync } from 'fs';
 import { join } from 'path';
 
-async function seed() {
+export async function seedWorks() {
   console.log('🌱 Seeding works...');
 
-  const dataDir = join(__dirname, '../../data/unified/works');
+  const dataDir = join(__dirname, '../../../data/unified/works');
   const files = readdirSync(dataDir).filter(f => f.endsWith('.json'));
 
   let count = 0;
@@ -48,4 +48,7 @@ async function seed() {
   console.log(`✅ Seeded ${count} works!`);
 }
 
-seed().catch(console.error);
+// Allow running standalone: node dist/seed-works.js
+if (require.main === module) {
+  seedWorks().catch(console.error);
+}

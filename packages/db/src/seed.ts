@@ -1,17 +1,24 @@
-import { db } from './index';
-import './seed-categories';
-import './seed-works';
-import './seed-characters';
+import { seedCategories } from './seed-categories';
+import { seedWorks } from './seed-works';
+import { seedCharacters } from './seed-characters';
 
 async function main() {
-  console.log('🎲 Running main seed...');
-  console.log('This will run all seeds in order:');
-  console.log('1. Categories');
-  console.log('2. Works');
-  console.log('3. Characters');
-  console.log('\nAll seeds have been executed as part of imports above.');
-  
-  await db.end();
+  console.log('🎲 Running all seeds...');
+
+  console.log('\n1. Categories');
+  await seedCategories();
+
+  console.log('\n2. Works');
+  await seedWorks();
+
+  console.log('\n3. Characters');
+  await seedCharacters();
+
+  console.log('\n✅ All seeds completed!');
+  process.exit(0);
 }
 
-main();
+main().catch((err) => {
+  console.error('❌ Seed failed:', err);
+  process.exit(1);
+});

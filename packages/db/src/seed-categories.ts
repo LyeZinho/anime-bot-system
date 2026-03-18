@@ -64,7 +64,7 @@ const categories = [
   }
 ];
 
-async function seed() {
+export async function seedCategories() {
   console.log('🌱 Seeding categories...');
 
   for (const cat of categories) {
@@ -114,4 +114,7 @@ async function seed() {
   console.log('✅ Categories seeded!');
 }
 
-seed().catch(console.error);
+// Allow running standalone: node dist/seed-categories.js
+if (require.main === module) {
+  seedCategories().catch(console.error);
+}

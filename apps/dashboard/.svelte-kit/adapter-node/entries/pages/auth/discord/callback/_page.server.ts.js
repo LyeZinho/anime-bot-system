@@ -1,7 +1,9 @@
 import { redirect } from "@sveltejs/kit";
-const DISCORD_CLIENT_ID = process.env.DISCORD_CLIENT_ID;
-const DISCORD_CLIENT_SECRET = process.env.DISCORD_CLIENT_SECRET;
-const REDIRECT_URI = process.env.NODE_ENV === "production" ? "https://nazuna.devscafe.org/auth/discord/callback" : "http://localhost:3001/auth/discord/callback";
+import { b as private_env } from "../../../../../chunks/shared-server.js";
+const DISCORD_CLIENT_ID = private_env.DISCORD_CLIENT_ID;
+const DISCORD_CLIENT_SECRET = private_env.DISCORD_CLIENT_SECRET;
+const PUBLIC_API_URL = private_env.PUBLIC_API_URL || "http://localhost:3001";
+const REDIRECT_URI = private_env.NODE_ENV === "production" ? "https://nazuna.devscafe.org/auth/discord/callback" : `${PUBLIC_API_URL}/auth/discord/callback`;
 const load = async ({ url, cookies }) => {
   const code = url.searchParams.get("code");
   if (!code) {

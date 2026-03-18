@@ -9,7 +9,7 @@ function Navigation($$renderer, $$props) {
       { href: "/rankings", label: "Rankings", icon: "trophy" },
       { href: "/user/me", label: "Profile", icon: "user" }
     ];
-    $$renderer2.push(`<nav class="navbar svelte-ocbj1u"><div class="nav-content svelte-ocbj1u"><a href="/" class="logo svelte-ocbj1u"><svg width="32" height="32" viewBox="0 0 32 32" fill="none"><circle cx="16" cy="16" r="14" stroke="url(#logoGrad)" stroke-width="2"></circle><circle cx="16" cy="16" r="8" fill="url(#logoGrad)" opacity="0.3"></circle><circle cx="16" cy="16" r="4" fill="url(#logoGrad)"></circle><defs><linearGradient id="logoGrad" x1="0" y1="0" x2="32" y2="32"><stop offset="0%" stop-color="#3b82f6"></stop><stop offset="100%" stop-color="#8b5cf6"></stop></linearGradient></defs></svg> <span class="logo-text gradient-text svelte-ocbj1u">Waifu<span class="accent svelte-ocbj1u">Roulette</span></span></a> <div class="nav-links svelte-ocbj1u"><!--[-->`);
+    $$renderer2.push(`<nav class="navbar svelte-ocbj1u"><div class="nav-content svelte-ocbj1u"><a href="/" class="logo svelte-ocbj1u"><svg width="32" height="32" viewBox="0 0 32 32" fill="none"><circle cx="16" cy="16" r="14" stroke="url(#logoGrad)" stroke-width="2"></circle><circle cx="16" cy="16" r="8" fill="url(#logoGrad)" opacity="0.3"></circle><circle cx="16" cy="16" r="4" fill="url(#logoGrad)"></circle><defs><linearGradient id="logoGrad" x1="0" y1="0" x2="32" y2="32"><stop offset="0%" stop-color="#3b82f6"></stop><stop offset="100%" stop-color="#8b5cf6"></stop></linearGradient></defs></svg> <span class="logo-text gradient-text svelte-ocbj1u">Nazuna<span class="accent svelte-ocbj1u">Bot</span></span></a> <div class="nav-links svelte-ocbj1u"><!--[-->`);
     const each_array = ensure_array_like(navItems);
     for (let $$index = 0, $$length = each_array.length; $$index < $$length; $$index++) {
       let item = each_array[$$index];
@@ -33,7 +33,7 @@ function Navigation($$renderer, $$props) {
       }
       $$renderer2.push(`<!--]--></span> ${escape_html(item.label)}</a>`);
     }
-    $$renderer2.push(`<!--]--></div> <div class="nav-auth"><button class="btn-login svelte-ocbj1u"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"></path><polyline points="10 17 15 12 10 7"></polyline><line x1="15" y1="12" x2="3" y2="12"></line></svg> Login with Discord</button></div></div></nav>`);
+    $$renderer2.push(`<!--]--></div> <div class="nav-auth"><a href="/auth/discord/callback" class="btn-login svelte-ocbj1u"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"></path><polyline points="10 17 15 12 10 7"></polyline><line x1="15" y1="12" x2="3" y2="12"></line></svg> Login with Discord</a></div></div></nav>`);
     if ($$store_subs) unsubscribe_stores($$store_subs);
   });
 }

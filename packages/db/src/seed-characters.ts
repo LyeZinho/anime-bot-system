@@ -2,10 +2,10 @@ import { db, characters, characterCategories, categoryValues, categoryTypes, cha
 import { readFileSync, readdirSync } from 'fs';
 import { join } from 'path';
 
-async function seed() {
+export async function seedCharacters() {
   console.log('🌱 Seeding characters...');
 
-  const dataDir = join(__dirname, '../../data/unified/characters');
+  const dataDir = join(__dirname, '../../../data/unified/characters');
   const files = readdirSync(dataDir).filter(f => f.endsWith('.json'));
 
   const personalityType = await db.query.categoryTypes.findFirst({
@@ -164,4 +164,7 @@ async function seed() {
   console.log(`✅ Seeded ${count} characters!`);
 }
 
-seed().catch(console.error);
+// Allow running standalone: node dist/seed-characters.js
+if (require.main === module) {
+  seedCharacters().catch(console.error);
+}

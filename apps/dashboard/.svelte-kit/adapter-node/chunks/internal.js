@@ -1,11 +1,6 @@
 import { r as root } from "./root.js";
 import "./environment.js";
-let public_env = {};
-function set_private_env(environment) {
-}
-function set_public_env(environment) {
-  public_env = environment;
-}
+import "./shared-server.js";
 let read_implementation = null;
 function set_read_implementation(fn) {
   read_implementation = fn;
@@ -30,7 +25,7 @@ const options = {
   service_worker_options: void 0,
   server_error_boundaries: false,
   templates: {
-    app: ({ head, body, assets, nonce, env }) => '<!doctype html>\n<html lang="en" data-theme="dark">\n  <head>\n    <meta charset="utf-8" />\n    <link rel="icon" href="' + assets + '/favicon.svg" />\n    <meta name="viewport" content="width=device-width, initial-scale=1" />\n    <meta name="description" content="Waifu Roulette - Collect anime characters" />\n    <meta name="theme-color" content="#6366F1" />\n    ' + head + '\n  </head>\n  <body data-sveltekit-preload-data="hover">\n    <div style="display: contents">' + body + "</div>\n  </body>\n</html>\n",
+    app: ({ head, body, assets, nonce, env }) => '<!doctype html>\n<html lang="en" data-theme="dark">\n  <head>\n    <meta charset="utf-8" />\n    <link rel="icon" href="' + assets + '/favicon.svg" />\n    <meta name="viewport" content="width=device-width, initial-scale=1" />\n    <meta name="description" content="Nazuna Bot - Collect anime characters" />\n    <meta name="theme-color" content="#6366F1" />\n    ' + head + '\n  </head>\n  <body data-sveltekit-preload-data="hover">\n    <div style="display: contents">' + body + "</div>\n  </body>\n</html>\n",
     error: ({ status, message }) => '<!doctype html>\n<html lang="en">\n	<head>\n		<meta charset="utf-8" />\n		<title>' + message + `</title>
 
 		<style>
@@ -102,7 +97,7 @@ const options = {
 		<div class="error">
 			<span class="status">` + status + '</span>\n			<div class="message">\n				<h1>' + message + "</h1>\n			</div>\n		</div>\n	</body>\n</html>\n"
   },
-  version_hash: "141dba0"
+  version_hash: "1at0z00"
 };
 async function get_hooks() {
   let handle;
@@ -123,12 +118,9 @@ async function get_hooks() {
   };
 }
 export {
-  set_public_env as a,
-  set_read_implementation as b,
-  set_manifest as c,
+  set_manifest as a,
   get_hooks as g,
   options as o,
-  public_env as p,
   read_implementation as r,
-  set_private_env as s
+  set_read_implementation as s
 };

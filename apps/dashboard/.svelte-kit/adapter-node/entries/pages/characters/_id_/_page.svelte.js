@@ -1,4 +1,4 @@
-import { s as store_get, h as head, d as unsubscribe_stores, c as escape_html } from "../../../../chunks/index.js";
+import { s as store_get, j as head, d as unsubscribe_stores, c as escape_html } from "../../../../chunks/index.js";
 import { p as page } from "../../../../chunks/stores.js";
 function _page($$renderer, $$props) {
   $$renderer.component(($$renderer2) => {
@@ -6,7 +6,7 @@ function _page($$renderer, $$props) {
     Number(store_get($$store_subs ??= {}, "$page", page).params.id);
     head("1nlw825", $$renderer2, ($$renderer3) => {
       $$renderer3.title(($$renderer4) => {
-        $$renderer4.push(`<title>${escape_html("Loading...")} - Waifu Roulette</title>`);
+        $$renderer4.push(`<title>${escape_html("Loading...")} - Nazuna Bot</title>`);
       });
     });
     {

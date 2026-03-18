@@ -1,45 +1,54 @@
-import { Module, Injectable } from '@nestjs/common';
+import { Module, Injectable, Logger } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
 import { exec } from 'child_process';
 import { promisify } from 'util';
+import { join } from 'path';
 
 const execAsync = promisify(exec);
 
 @Injectable()
 export class DatabaseMigrationService {
+  private readonly logger = new Logger(DatabaseMigrationService.name);
+
   constructor(private configService: ConfigService) {}
 
   async runMigrations() {
-    const isProduction = this.configService.get<string>('NODE_ENV') === 'production';
-    if (!isProduction) {
-      console.log('🔄 Skipping migrations in non-production mode');
-      return;
-    }
+    this.logger.log('Running database migrations...');
 
-    console.log('🔄 Running database migrations...');
+    const migrateScript = join(__dirname, '../../../../packages/db/dist/migrate.js');
     
     try {
-      await execAsync('pnpm --filter @anime-bot/db db:push');
-      console.log('✅ Schema pushed successfully');
-    } catch (error) {
-      console.error('❌ Schema push failed:', error);
+      const { stdout, stderr } = await execAsync(`node ${migrateScript}`, {
+        env: { ...process.env },
+        timeout: 60_000,
+      });
+      if (stdout) this.logger.log(stdout.trim());
+      if (stderr) this.logger.warn(stderr.trim());
+      this.logger.log('Schema migration completed');
+    } catch (error: unknown) {
+      const execError = error as { stdout?: string; stderr?: string; message?: string };
+      this.logger.error('Schema migration failed:', execError.stderr || execError.message);
+      throw error;
     }
   }
 
   async seedDatabase() {
-    const isProduction = this.configService.get<string>('NODE_ENV') === 'production';
-    if (!isProduction) {
-      console.log('🌱 Skipping seeds in non-production mode');
-      return;
-    }
+    this.logger.log('Running database seeds...');
 
-    console.log('🌱 Running database seeds...');
-    
+    const seedScript = join(__dirname, '../../../../packages/db/dist/seed.js');
+
     try {
-      await execAsync('pnpm --filter @anime-bot/db db:seed');
-      console.log('✅ Seeds completed successfully');
-    } catch (error) {
-      console.error('❌ Seeds failed:', error);
+      const { stdout, stderr } = await execAsync(`node ${seedScript}`, {
+        env: { ...process.env },
+        timeout: 300_000,
+      });
+      if (stdout) this.logger.log(stdout.trim());
+      if (stderr) this.logger.warn(stderr.trim());
+      this.logger.log('Seeds completed');
+    } catch (error: unknown) {
+      const execError = error as { stdout?: string; stderr?: string; message?: string };
+      this.logger.error('Seeds failed:', execError.stderr || execError.message);
+      throw error;
     }
   }
 }

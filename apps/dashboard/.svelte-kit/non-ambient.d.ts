@@ -29,7 +29,7 @@ declare module "$app/types" {
 	type MatcherParam<M> = M extends (param : string) => param is (infer U extends string) ? U : string;
 
 	export interface AppTypes {
-		RouteId(): "/" | "/auth" | "/auth/discord" | "/auth/discord/callback" | "/characters" | "/characters/[id]" | "/user" | "/user/[id]";
+		RouteId(): "/" | "/auth" | "/auth/discord" | "/auth/discord/callback" | "/characters" | "/characters/[id]" | "/rankings" | "/user" | "/user/[id]";
 		RouteParams(): {
 			"/characters/[id]": { id: string };
 			"/user/[id]": { id: string }
@@ -41,10 +41,11 @@ declare module "$app/types" {
 			"/auth/discord/callback": Record<string, never>;
 			"/characters": { id?: string };
 			"/characters/[id]": { id: string };
+			"/rankings": Record<string, never>;
 			"/user": { id?: string };
 			"/user/[id]": { id: string }
 		};
-		Pathname(): "/" | "/auth/discord/callback" | "/characters" | `/characters/${string}` & {} | `/user/${string}` & {};
+		Pathname(): "/" | "/auth/discord/callback" | "/characters" | `/characters/${string}` & {} | "/rankings" | `/user/${string}` & {};
 		ResolvedPathname(): `${"" | `/${string}`}${ReturnType<AppTypes['Pathname']>}`;
 		Asset(): string & {};
 	}

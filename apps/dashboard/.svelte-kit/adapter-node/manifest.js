@@ -10,7 +10,7 @@ return {
 	assets: new Set([]),
 	mimeTypes: {},
 	_: {
-		client: {start:"_app/immutable/entry/start.2uBHLVYW.js",app:"_app/immutable/entry/app.CRhFKarP.js",imports:["_app/immutable/entry/start.2uBHLVYW.js","_app/immutable/chunks/CdFps_uM.js","_app/immutable/chunks/D8lIUDP2.js","_app/immutable/chunks/IC-rXPy1.js","_app/immutable/chunks/BIhItLcp.js","_app/immutable/entry/app.CRhFKarP.js","_app/immutable/chunks/D8lIUDP2.js","_app/immutable/chunks/Ba4oGplt.js","_app/immutable/chunks/BIhItLcp.js","_app/immutable/chunks/B3i0r4sX.js","_app/immutable/chunks/DagnnaL0.js"],stylesheets:[],fonts:[],uses_env_dynamic_public:false},
+		client: {start:"_app/immutable/entry/start.aNz25ad1.js",app:"_app/immutable/entry/app.xZYC7wzj.js",imports:["_app/immutable/entry/start.aNz25ad1.js","_app/immutable/chunks/5wfDrgrL.js","_app/immutable/chunks/CiPhZLX9.js","_app/immutable/chunks/BWJ0Oxgw.js","_app/immutable/chunks/BHWHMxoS.js","_app/immutable/entry/app.xZYC7wzj.js","_app/immutable/chunks/CiPhZLX9.js","_app/immutable/chunks/BreV0DEp.js","_app/immutable/chunks/BHWHMxoS.js","_app/immutable/chunks/CP4MshlK.js","_app/immutable/chunks/2zxvPmur.js","_app/immutable/chunks/ByVcOtqw.js","_app/immutable/chunks/BWJ0Oxgw.js"],stylesheets:[],fonts:[],uses_env_dynamic_public:false},
 		nodes: [
 			__memo(() => import('./nodes/0.js')),
 			__memo(() => import('./nodes/1.js')),
@@ -18,7 +18,8 @@ return {
 			__memo(() => import('./nodes/3.js')),
 			__memo(() => import('./nodes/4.js')),
 			__memo(() => import('./nodes/5.js')),
-			__memo(() => import('./nodes/6.js'))
+			__memo(() => import('./nodes/6.js')),
+			__memo(() => import('./nodes/7.js'))
 		],
 		remotes: {
 			
@@ -53,10 +54,17 @@ return {
 				endpoint: null
 			},
 			{
+				id: "/rankings",
+				pattern: /^\/rankings\/?$/,
+				params: [],
+				page: { layouts: [0,], errors: [1,], leaf: 6 },
+				endpoint: null
+			},
+			{
 				id: "/user/[id]",
 				pattern: /^\/user\/([^/]+?)\/?$/,
 				params: [{"name":"id","optional":false,"rest":false,"chained":false}],
-				page: { layouts: [0,], errors: [1,], leaf: 6 },
+				page: { layouts: [0,], errors: [1,], leaf: 7 },
 				endpoint: null
 			}
 		],

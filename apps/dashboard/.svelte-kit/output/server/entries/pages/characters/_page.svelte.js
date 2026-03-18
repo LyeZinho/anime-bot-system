@@ -1,84 +1,22 @@
-import { c as escape_html, e as ensure_array_like, k as attr_style, a as attr, j as stringify, b as attr_class, l as bind_props, h as head } from "../../../chunks/index.js";
+import { c as escape_html, e as ensure_array_like, h as attr_style, a as attr, i as stringify, b as attr_class, l as bind_props, j as head } from "../../../chunks/index.js";
 import { C as CharacterCard } from "../../../chunks/CharacterCard.js";
-import "@sveltejs/kit/internal";
-import "../../../chunks/exports.js";
-import "../../../chunks/utils2.js";
-import "@sveltejs/kit/internal/server";
-import "../../../chunks/root.js";
-import "../../../chunks/state.svelte.js";
 function CharacterGrid($$renderer, $$props) {
   $$renderer.component(($$renderer2) => {
     let loading = false;
-    let characters = [
-      {
-        anilistId: 40882,
-        name: "Eren Yeager",
-        work: "Attack on Titan",
-        rank: 1,
-        image: "https://s4.anilist.co/file/anilistcdn/character/large/b40882-dsj7IP943WFF.jpg"
-      },
-      {
-        anilistId: 40881,
-        name: "Mikasa Ackerman",
-        work: "Attack on Titan",
-        rank: 2,
-        image: "https://s4.anilist.co/file/anilistcdn/character/large/b40881-F3gr1PkreDvj.png"
-      },
-      {
-        anilistId: 126071,
-        name: "Tanjirou Kamado",
-        work: "Demon Slayer",
-        rank: 3,
-        image: "https://s4.anilist.co/file/anilistcdn/character/large/b126071-BTNEc1nRIv68.png"
-      },
-      {
-        anilistId: 127518,
-        name: "Nezuko Kamado",
-        work: "Demon Slayer",
-        rank: 4,
-        image: "https://s4.anilist.co/file/anilistcdn/character/large/b127518-NRlq1CQ1v1ro.png"
-      },
-      {
-        anilistId: 129130,
-        name: "Inosuke Hashibira",
-        work: "Demon Slayer",
-        rank: 5,
-        image: "https://s4.anilist.co/file/anilistcdn/character/large/n129130-SJC0Kn1DU39E.jpg"
-      },
-      {
-        anilistId: 129131,
-        name: "Zenitsu Agatsuma",
-        work: "Demon Slayer",
-        rank: 6,
-        image: "https://s4.anilist.co/file/anilistcdn/character/large/b129131-FZrQ7lSlxmEr.png"
-      },
-      {
-        anilistId: 5114,
-        name: "Light Yagami",
-        work: "Death Note",
-        rank: 7,
-        image: "https://s4.anilist.co/file/anilistcdn/character/large/b5114-Q1V7JXa0Nbbb.jpg"
-      },
-      {
-        anilistId: 7888,
-        name: "L Lawliet",
-        work: "Death Note",
-        rank: 8,
-        image: "https://s4.anilist.co/file/anilistcdn/character/large/b7888-W1D3PSW59lD6.jpg"
-      }
-    ];
-    $$renderer2.push(`<div class="character-grid-container svelte-1kpbrr3"><div class="grid-header svelte-1kpbrr3"><span class="results-count svelte-1kpbrr3">${escape_html(Number(12044).toLocaleString())} characters</span> <div class="sort-options svelte-1kpbrr3"><button class="sort-btn active svelte-1kpbrr3">Popular</button> <button class="sort-btn svelte-1kpbrr3">Rating</button> <button class="sort-btn svelte-1kpbrr3">Name</button></div></div> <div class="character-grid svelte-1kpbrr3"><!--[-->`);
+    let characters = [];
+    let total = 0;
+    $$renderer2.push(`<div class="character-grid-container svelte-1kpbrr3"><div class="grid-header svelte-1kpbrr3"><span class="results-count svelte-1kpbrr3">${escape_html(total.toLocaleString())} characters</span> <div class="sort-options svelte-1kpbrr3"><button class="sort-btn active svelte-1kpbrr3">Popular</button> <button class="sort-btn svelte-1kpbrr3">Rating</button> <button class="sort-btn svelte-1kpbrr3">Name</button></div></div> <div class="character-grid svelte-1kpbrr3"><!--[-->`);
     const each_array = ensure_array_like(characters);
     for (let i = 0, $$length = each_array.length; i < $$length; i++) {
       let char = each_array[i];
-      $$renderer2.push(`<div class="animate-fade-in"${attr_style(`opacity: 0; animation-delay: ${stringify(Math.min(i * 0.05, 0.3))}s`)}>`);
+      $$renderer2.push(`<div class="animate-fade-in"${attr_style(`opacity: 0; animation-delay: ${stringify(Math.min(i * 0.05, 0.3))}s`)}><a${attr("href", `/characters/${stringify(char.anilistId)}`)}>`);
       CharacterCard($$renderer2, {
         name: char.name,
-        work: char.work,
-        rank: char.rank,
-        image: char.image
+        work: char.work?.title || "Unknown",
+        rank: char.popularity || 0,
+        image: char.imageUrl || ""
       });
-      $$renderer2.push(`<!----></div>`);
+      $$renderer2.push(`<!----></a></div>`);
     }
     $$renderer2.push(`<!--]--></div> `);
     {
@@ -191,7 +129,7 @@ function _page($$renderer, $$props) {
     function $$render_inner($$renderer3) {
       head("75i7xh", $$renderer3, ($$renderer4) => {
         $$renderer4.title(($$renderer5) => {
-          $$renderer5.push(`<title>Characters - Waifu Roulette</title>`);
+          $$renderer5.push(`<title>Characters - Nazuna Bot</title>`);
         });
       });
       $$renderer3.push(`<div class="characters-page svelte-75i7xh"><header class="page-header animate-slide-up svelte-75i7xh"><h1 class="page-title svelte-75i7xh"><span class="gradient-text">Explore</span> Characters</h1> <p class="page-subtitle svelte-75i7xh">Browse through ${escape_html(Number(12044).toLocaleString())} anime characters</p></header> <div class="page-content svelte-75i7xh"><aside class="filters-sidebar animate-fade-in svelte-75i7xh" style="opacity: 0; animation-delay: 0.1s">`);
