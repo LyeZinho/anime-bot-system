@@ -1,0 +1,65 @@
+{
+  "internalId": 254,
+  "anilistId": 20623,
+  "title": "Parasyte -the maxim-",
+  "alt_titles": [
+    "Kiseijuu: Sei no Kakuritsu",
+    "寄生獣 セイの格率"
+  ],
+  "source_ids": {
+    "anime": 20623,
+    "manga": null
+  },
+  "metadata": {
+    "popularity": 452416,
+    "averageScore": 81,
+    "formats": [
+      "TV"
+    ],
+    "genres": [
+      "Action",
+      "Drama",
+      "Horror",
+      "Psychological",
+      "Sci-Fi"
+    ],
+    "tags": [
+      "Body Horror",
+      "Shapeshifting",
+      "Survival",
+      "Aliens",
+      "Male Protagonist",
+      "Philosophy",
+      "Seinen",
+      "Anthropomorphism",
+      "Gore",
+      "Anti-Hero",
+      "Revenge",
+      "Heterosexual",
+      "Crime",
+      "Tragedy",
+      "Cannibalism",
+      "Environmental",
+      "Urban",
+      "Primarily Teen Cast",
+      "School",
+      "Military",
+      "Coming of Age"
+    ],
+    "status": "FINISHED",
+    "episodes": 24
+  },
+  "images": [
+    {
+      "url": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx20623-dUARfggnNDOe.jpg",
+      "type": "cover",
+      "source": "AniList"
+    },
+    {
+      "url": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/20623-xb9PPf8rGOsG.jpg",
+      "type": "banner",
+      "source": "AniList"
+    }
+  ],
+  "description": "They arrive in silence and darkness. They descend from the skies. They have a hunger for human flesh. They are everywhere. They are parasites, alien creatures who must invade–and take control of–a human host to survive. And once they have infected their victims, they can assume any deadly form they choose: monsters with giant teeth, winged demons, creatures with blades for hands. But most have chosen to conceal their lethal purpose behind ordinary human faces. So no one knows their secret–except an ordinary high school student. Shin is battling for control of his own body against an alien parasite, but can he find a way to warn humanity of the horrors to come?\n\n(Source: Del Rey)"
+}

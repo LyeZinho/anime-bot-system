@@ -1,0 +1,19 @@
+{
+  "anilistId": 1,
+  "slug": "spike-spiegel",
+  "name": "Spike Spiegel",
+  "alt_names": [
+    "スパイク・スピーゲル",
+    "Spike Spike",
+    "Swimming Bird"
+  ],
+  "description": "__Height:__ 185 cm   \n\nSpike Spiegel is a tall and lean 27-year-old bounty hunter born on Mars.",
+  "role": "protagonist",
+  "gender": null,
+  "imageUrl": "https://s4.anilist.co/file/anilistcdn/character/large/b1-ChxaldmieFlQ.png",
+  "popularity": 0,
+  "score": 0,
+  "workId": 63,
+  "rarity": "legendary",
+  "categories": {}
+}

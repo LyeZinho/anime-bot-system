@@ -1,0 +1,68 @@
+{
+  "internalId": 198,
+  "anilistId": 97986,
+  "title": "Made in Abyss",
+  "alt_titles": [
+    "Made in Abyss",
+    "メイドインアビス"
+  ],
+  "source_ids": {
+    "anime": 97986,
+    "manga": null
+  },
+  "metadata": {
+    "popularity": 363242,
+    "averageScore": 84,
+    "formats": [
+      "TV"
+    ],
+    "genres": [
+      "Adventure",
+      "Drama",
+      "Fantasy",
+      "Horror",
+      "Mystery",
+      "Sci-Fi"
+    ],
+    "tags": [
+      "Survival",
+      "Outdoor Activities",
+      "Primarily Child Cast",
+      "Environmental",
+      "Travel",
+      "Chibi",
+      "Body Horror",
+      "Tragedy",
+      "Lost Civilization",
+      "Cosmic Horror",
+      "Dungeon",
+      "Philosophy",
+      "Seinen",
+      "Female Protagonist",
+      "Curses",
+      "Gore",
+      "Amnesia",
+      "Orphan",
+      "Wilderness",
+      "Male Protagonist",
+      "Robots",
+      "Steampunk",
+      "Anthropomorphism"
+    ],
+    "status": "FINISHED",
+    "episodes": 13
+  },
+  "images": [
+    {
+      "url": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx97986-TQ7dCgbS3y5s.jpg",
+      "type": "cover",
+      "source": "AniList"
+    },
+    {
+      "url": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/97986-C55UnbJKB7ZF.jpg",
+      "type": "banner",
+      "source": "AniList"
+    }
+  ],
+  "description": "The \"Abyss\" is the last unexplored place in the world. Strange and wonderful creatures roam within, and it is full of precious relics that present humans can't recreate. Those that dare to explore the depths are known as \"Cave Raiders.\" An orphan girl named Riko lives on the rim. Her dream is to become a Cave Raider like her mother and solve the mysteries of the cave system. One day, Riko starts exploring the caves and discovers a robot who resembles a human boy.\n\n(Source: Anime News Network, edited)\n\nNote: The last episode aired with a runtime of ~48 minutes as opposed to the standard 24 minute long episode."
+}

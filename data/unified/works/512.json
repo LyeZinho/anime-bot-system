@@ -1,0 +1,56 @@
+{
+  "internalId": 181,
+  "anilistId": 512,
+  "title": "Kiki's Delivery Service",
+  "alt_titles": [
+    "Majo no Takkyuubin",
+    "魔女の宅急便"
+  ],
+  "source_ids": {
+    "anime": 512,
+    "manga": null
+  },
+  "metadata": {
+    "popularity": 167193,
+    "averageScore": 81,
+    "formats": [
+      "MOVIE"
+    ],
+    "genres": [
+      "Adventure",
+      "Drama",
+      "Fantasy",
+      "Slice of Life"
+    ],
+    "tags": [
+      "Coming of Age",
+      "Witch",
+      "Urban Fantasy",
+      "Female Protagonist",
+      "Magic",
+      "Primarily Female Cast",
+      "Work",
+      "Coastal",
+      "Kids",
+      "Urban",
+      "Primarily Adult Cast",
+      "Aviation",
+      "Animals"
+    ],
+    "status": "FINISHED",
+    "episodes": 1
+  },
+  "images": [
+    {
+      "url": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx512-UwP8X4BR8YoM.png",
+      "type": "cover",
+      "source": "AniList"
+    },
+    {
+      "url": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/512-Ssp3EE2NdeoA.jpg",
+      "type": "banner",
+      "source": "AniList"
+    }
+  ],
+  "description": "Kiki is an enterprising young girl who must follow tradition to become a full-fledged witch. Venturing out with only her chatty black cat, Jiji, Kiki flies off for the adventure of a lifetime. Landing in a far-off city, she sets up a high-flying delivery service and begins a wonderful experience of independence and responsibility as she finds her place in the world.\n\n(Source: Disney)"
+}

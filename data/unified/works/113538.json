@@ -1,0 +1,49 @@
+{
+  "internalId": 140,
+  "anilistId": 113538,
+  "title": "HAIKYU!! TO THE TOP Part 2",
+  "alt_titles": [
+    "Haikyuu!! TO THE TOP 2",
+    "ハイキュー!! TO THE TOP 2"
+  ],
+  "source_ids": {
+    "anime": 113538,
+    "manga": null
+  },
+  "metadata": {
+    "popularity": 232165,
+    "averageScore": 85,
+    "formats": [
+      "TV"
+    ],
+    "genres": [
+      "Comedy",
+      "Drama",
+      "Sports"
+    ],
+    "tags": [
+      "Primarily Teen Cast",
+      "Volleyball",
+      "Male Protagonist",
+      "Ensemble Cast",
+      "Primarily Male Cast",
+      "School Club",
+      "Shounen"
+    ],
+    "status": "FINISHED",
+    "episodes": 12
+  },
+  "images": [
+    {
+      "url": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx113538-tHVE8j5mOPLu.jpg",
+      "type": "cover",
+      "source": "AniList"
+    },
+    {
+      "url": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/113538-YAcNXzT07eWR.jpg",
+      "type": "banner",
+      "source": "AniList"
+    }
+  ],
+  "description": "The second half of Haikyuu!! 4th season kicks-off where the first part ended. Karasuno High won their first match of The Spring Nationals against Tsubakihara Academy. Karasuno High is excited to be back in the Spring Nationals after many years of not making it, so can they handle the pressure of playing against the best teams in Japan? Will they make it to the top?"
+}

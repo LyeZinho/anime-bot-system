@@ -1,0 +1,62 @@
+{
+  "internalId": 9,
+  "anilistId": 20613,
+  "title": "Akame ga Kill!",
+  "alt_titles": [
+    "Akame ga Kill!",
+    "アカメが斬る！"
+  ],
+  "source_ids": {
+    "anime": 20613,
+    "manga": null
+  },
+  "metadata": {
+    "popularity": 483253,
+    "averageScore": 72,
+    "formats": [
+      "TV"
+    ],
+    "genres": [
+      "Action",
+      "Adventure",
+      "Drama",
+      "Fantasy",
+      "Horror",
+      "Psychological",
+      "Thriller"
+    ],
+    "tags": [
+      "Assassins",
+      "Tragedy",
+      "Shounen",
+      "Politics",
+      "Gore",
+      "Crime",
+      "Henshin",
+      "Swordplay",
+      "Super Power",
+      "Revenge",
+      "Female Protagonist",
+      "Anti-Hero",
+      "Male Protagonist",
+      "Primarily Adult Cast",
+      "Kuudere",
+      "Heterosexual"
+    ],
+    "status": "FINISHED",
+    "episodes": 24
+  },
+  "images": [
+    {
+      "url": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx20613-HXHpec4bemk5.jpg",
+      "type": "cover",
+      "source": "AniList"
+    },
+    {
+      "url": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/20613-CoEQF4qKiWDX.jpg",
+      "type": "banner",
+      "source": "AniList"
+    }
+  ],
+  "description": "In a land where corruption rules and a ruthless Prime Minister has turned the puppet Emperor's armies of soldiers, assassins and secret police against the people, only one force dares to stand against them: Night Raid, an elite team of relentless killers, each equipped with an Imperial Arm - legendary weapons with unique and incredible powers created in the distant past.\n\nRescued from a fate worse than death by Night Raid, young Tatsumi is offered the chance to join their lethal ranks… but it's a deadly choice, as few can master an Imperial Arm and even fewer survive when two Arms go against each other in combat. The battle is on, and only the strongest will make it out alive.\n\n(Source: Sentai Filmworks)"
+}

@@ -1,0 +1,61 @@
+{
+  "internalId": 12,
+  "anilistId": 6547,
+  "title": "Angel Beats!",
+  "alt_titles": [
+    "Angel Beats!",
+    "Angel Beats!"
+  ],
+  "source_ids": {
+    "anime": 6547,
+    "manga": null
+  },
+  "metadata": {
+    "popularity": 405447,
+    "averageScore": 77,
+    "formats": [
+      "TV"
+    ],
+    "genres": [
+      "Action",
+      "Comedy",
+      "Drama",
+      "Supernatural"
+    ],
+    "tags": [
+      "Afterlife",
+      "Tragedy",
+      "School",
+      "Amnesia",
+      "Primarily Teen Cast",
+      "Kuudere",
+      "Coming of Age",
+      "Isekai",
+      "Memory Manipulation",
+      "Boarding School",
+      "Male Protagonist",
+      "Ensemble Cast",
+      "Slapstick",
+      "Angels",
+      "Found Family",
+      "Survival",
+      "Guns",
+      "School Club"
+    ],
+    "status": "FINISHED",
+    "episodes": 13
+  },
+  "images": [
+    {
+      "url": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx6547-SYexAn5aFyss.png",
+      "type": "cover",
+      "source": "AniList"
+    },
+    {
+      "url": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/6547-YUUiSjKyxxeQ.jpg",
+      "type": "banner",
+      "source": "AniList"
+    }
+  ],
+  "description": "Otonashi wakes up in the afterlife to find out he has no memories of his life before death. Desperate to survive in a war that could yield another unfortunate fate, he joins the SSS in the battle against Angel, whose very mission is to destroy all inhabitants of this afterlife. As Otonashi struggles to recover his memory and learn more about this world, he finds that not all is as it had seemed.\n\n(Source: Funimation)"
+}

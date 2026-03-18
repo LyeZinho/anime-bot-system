@@ -1,0 +1,62 @@
+{
+  "internalId": 40,
+  "anilistId": 20727,
+  "title": "Blood Blockade Battlefront",
+  "alt_titles": [
+    "Kekkai Sensen",
+    "血界戦線"
+  ],
+  "source_ids": {
+    "anime": 20727,
+    "manga": null
+  },
+  "metadata": {
+    "popularity": 208716,
+    "averageScore": 74,
+    "formats": [
+      "TV"
+    ],
+    "genres": [
+      "Action",
+      "Comedy",
+      "Supernatural"
+    ],
+    "tags": [
+      "Urban Fantasy",
+      "Super Power",
+      "Aliens",
+      "Alternate Universe",
+      "Ensemble Cast",
+      "Dystopian",
+      "Tanned Skin",
+      "Urban",
+      "Slapstick",
+      "Vampire",
+      "Primarily Adult Cast",
+      "Male Protagonist",
+      "Shounen",
+      "Gore",
+      "Post-Apocalyptic",
+      "Foreign",
+      "Demons",
+      "Tomboy",
+      "Tragedy",
+      "Werewolf"
+    ],
+    "status": "FINISHED",
+    "episodes": 12
+  },
+  "images": [
+    {
+      "url": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx20727-jgVnxLCHAKqZ.jpg",
+      "type": "cover",
+      "source": "AniList"
+    },
+    {
+      "url": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/20727-jcGXKLo3lLDP.jpg",
+      "type": "banner",
+      "source": "AniList"
+    }
+  ],
+  "description": "A breach between Earth and the netherworlds has opened up over the city of New York, trapping New Yorkers and creatures from other dimensions in an impenetrable bubble. They've lived together for years, in a world of crazy crime sci-fi sensibilities. Now someone is threatening to sever the bubble, and a group of stylish superhumans is working to keep it from happening.\n\n(Source: Anime News Network)\n\nNote: The last episode aired with a runtime of ~46 minutes as opposed to the standard 24 minute long episode."
+}

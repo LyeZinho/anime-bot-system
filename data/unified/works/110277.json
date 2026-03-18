@@ -1,0 +1,75 @@
+{
+  "internalId": 21,
+  "anilistId": 110277,
+  "title": "Attack on Titan Final Season",
+  "alt_titles": [
+    "Shingeki no Kyojin: The Final Season",
+    "進撃の巨人 The Final Season"
+  ],
+  "source_ids": {
+    "anime": 110277,
+    "manga": null
+  },
+  "metadata": {
+    "popularity": 571429,
+    "averageScore": 86,
+    "formats": [
+      "TV"
+    ],
+    "genres": [
+      "Action",
+      "Drama",
+      "Fantasy",
+      "Mystery"
+    ],
+    "tags": [
+      "War",
+      "Tragedy",
+      "Military",
+      "Kaiju",
+      "Revenge",
+      "Anti-Hero",
+      "Politics",
+      "Dystopian",
+      "Time Skip",
+      "Ensemble Cast",
+      "Survival",
+      "Shapeshifting",
+      "Male Protagonist",
+      "Swordplay",
+      "Henshin",
+      "Coastal",
+      "Steampunk",
+      "Shounen",
+      "Primarily Male Cast",
+      "Super Power",
+      "Primarily Adult Cast",
+      "Terrorism",
+      "Conspiracy",
+      "Espionage",
+      "Gore",
+      "Philosophy",
+      "CGI",
+      "Foreign",
+      "Body Horror",
+      "Memory Manipulation",
+      "Matriarchy",
+      "Guns"
+    ],
+    "status": "FINISHED",
+    "episodes": 16
+  },
+  "images": [
+    {
+      "url": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx110277-sKUNXAsWMNFw.jpg",
+      "type": "cover",
+      "source": "AniList"
+    },
+    {
+      "url": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/110277-iuGn6F5bK1U1.jpg",
+      "type": "banner",
+      "source": "AniList"
+    }
+  ],
+  "description": "It’s been four years since the Scout Regiment reached the shoreline, and the world looks different now. Things are heating up as the fate of the Scout Regiment—and the people of Paradis—are determined at last. However, Eren is missing. Will he reappear before age-old tensions between Marleyans and Eldians result in the war of all wars?\n\n(Source: Crunchyroll)"
+}

@@ -1,0 +1,25 @@
+{
+  "anilistId": 36310,
+  "slug": "sonohokasei",
+  "name": "Sonohokasei",
+  "alt_names": [
+    "その他声",
+    "その他の登場人物",
+    "Others",
+    "Additional Voices",
+    "Various Voices",
+    "Mumei (無名)",
+    "Nameless",
+    "Non-credit (ノンクレジット)",
+    "Yakufumei (役不明)"
+  ],
+  "description": "This character page is set to represent and list credits for voice roles without a specific character name/role attributed. Character roles named specifically should be added separately.",
+  "role": "minor",
+  "gender": null,
+  "imageUrl": "https://s4.anilist.co/file/anilistcdn/character/large/b36310-MxvktN1rvC91.jpg",
+  "popularity": 0,
+  "score": 0,
+  "workId": 96,
+  "rarity": "epic",
+  "categories": {}
+}

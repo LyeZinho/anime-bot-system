@@ -1,0 +1,68 @@
+{
+  "internalId": 22,
+  "anilistId": 131681,
+  "title": "Attack on Titan Final Season Part 2",
+  "alt_titles": [
+    "Shingeki no Kyojin: The Final Season Part 2",
+    "進撃の巨人 The Final Season Part 2"
+  ],
+  "source_ids": {
+    "anime": 131681,
+    "manga": null
+  },
+  "metadata": {
+    "popularity": 378771,
+    "averageScore": 86,
+    "formats": [
+      "TV"
+    ],
+    "genres": [
+      "Action",
+      "Drama",
+      "Fantasy",
+      "Mystery",
+      "Psychological"
+    ],
+    "tags": [
+      "War",
+      "Tragedy",
+      "Revenge",
+      "Anti-Hero",
+      "Military",
+      "Survival",
+      "Memory Manipulation",
+      "Kaiju",
+      "Terrorism",
+      "Espionage",
+      "Foreign",
+      "Primarily Male Cast",
+      "Super Power",
+      "Henshin",
+      "Male Protagonist",
+      "Philosophy",
+      "Gore",
+      "Body Horror",
+      "Primarily Adult Cast",
+      "Ensemble Cast",
+      "Slavery",
+      "CGI",
+      "Amputation",
+      "Steampunk"
+    ],
+    "status": "FINISHED",
+    "episodes": 12
+  },
+  "images": [
+    {
+      "url": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx131681-5ooUqvqNtee1.jpg",
+      "type": "cover",
+      "source": "AniList"
+    },
+    {
+      "url": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/131681-3tNurPRsqsfz.jpg",
+      "type": "banner",
+      "source": "AniList"
+    }
+  ],
+  "description": "The war for Paradis zeroes in on Shiganshina just as Jaegerists have seized control. After taking a huge blow from a surprise attack led by Eren, Marley swiftly acts to return the favor. With Zeke’s true plan revealed and a military forced under new rule, this battle might be fought on two fronts. Does Eren intend on fulfilling his half-brother’s wishes or does he have a plan of his own?\n\n(Source: Funimation)"
+}

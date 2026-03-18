@@ -1,0 +1,56 @@
+{
+  "internalId": 326,
+  "anilistId": 101759,
+  "title": "The Promised Neverland",
+  "alt_titles": [
+    "Yakusoku no Neverland",
+    "約束のネバーランド"
+  ],
+  "source_ids": {
+    "anime": 101759,
+    "manga": null
+  },
+  "metadata": {
+    "popularity": 577927,
+    "averageScore": 83,
+    "formats": [
+      "TV"
+    ],
+    "genres": [
+      "Drama",
+      "Fantasy",
+      "Horror",
+      "Mystery",
+      "Psychological",
+      "Thriller"
+    ],
+    "tags": [
+      "Dystopian",
+      "Survival",
+      "Primarily Child Cast",
+      "Orphan",
+      "Tragedy",
+      "Found Family",
+      "Demons",
+      "Coming of Age",
+      "Female Protagonist",
+      "Gore",
+      "Ensemble Cast"
+    ],
+    "status": "FINISHED",
+    "episodes": 12
+  },
+  "images": [
+    {
+      "url": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx101759-8UR7r9MNVpz2.jpg",
+      "type": "cover",
+      "source": "AniList"
+    },
+    {
+      "url": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/101759-MhlCoeqnODso.jpg",
+      "type": "banner",
+      "source": "AniList"
+    }
+  ],
+  "description": "Emma, Norman and Ray are the brightest kids at the Grace Field House orphanage. And under the care of the woman they refer to as “Mom,” all the kids have enjoyed a comfortable life. Good food, clean clothes and the perfect environment to learn—what more could an orphan ask for? One day, though, Emma and Norman uncover the dark truth of the outside world they are forbidden from seeing.\n\n(Source: Viz Media)"
+}

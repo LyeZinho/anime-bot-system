@@ -1,0 +1,53 @@
+{
+  "internalId": 257,
+  "anilistId": 2890,
+  "title": "Ponyo",
+  "alt_titles": [
+    "Gake no Ue no Ponyo",
+    "崖の上のポニョ"
+  ],
+  "source_ids": {
+    "anime": 2890,
+    "manga": null
+  },
+  "metadata": {
+    "popularity": 167696,
+    "averageScore": 79,
+    "formats": [
+      "MOVIE"
+    ],
+    "genres": [
+      "Adventure",
+      "Fantasy"
+    ],
+    "tags": [
+      "Natural Disaster",
+      "Primarily Child Cast",
+      "Environmental",
+      "Kids",
+      "Coastal",
+      "Rural",
+      "Magic",
+      "Urban Fantasy",
+      "Anthropomorphism",
+      "Family Life",
+      "Female Protagonist",
+      "Male Protagonist"
+    ],
+    "status": "FINISHED",
+    "episodes": 1
+  },
+  "images": [
+    {
+      "url": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx2890-wcNtFr6aUYOR.jpg",
+      "type": "cover",
+      "source": "AniList"
+    },
+    {
+      "url": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/2890-9ABkcfl2a7xS.jpg",
+      "type": "banner",
+      "source": "AniList"
+    }
+  ],
+  "description": "A young boy named Sosuke rescues a goldfish named Ponyo, and they embark on a fantastic journey of friendship and discovery before Ponyo's father, a powerful sorcerer, forces her to return to her home in the sea. But Ponyo's desire to be human upsets the delicate balance of nature and triggers a gigantic storm. Only Ponyo's mother, a beautiful sea goddess, can restore nature's balance and make Ponyo's dreams come true. \n\n\r\n(Source: Disney)"
+}

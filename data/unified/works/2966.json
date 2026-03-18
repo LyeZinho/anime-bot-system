@@ -1,0 +1,60 @@
+{
+  "internalId": 287,
+  "anilistId": 2966,
+  "title": "Spice and Wolf",
+  "alt_titles": [
+    "Ookami to Koushinryou",
+    "狼と香辛料"
+  ],
+  "source_ids": {
+    "anime": 2966,
+    "manga": null
+  },
+  "metadata": {
+    "popularity": 166814,
+    "averageScore": 80,
+    "formats": [
+      "TV"
+    ],
+    "genres": [
+      "Adventure",
+      "Fantasy",
+      "Romance",
+      "Slice of Life"
+    ],
+    "tags": [
+      "Economics",
+      "Male Protagonist",
+      "Work",
+      "Primarily Adult Cast",
+      "Historical",
+      "Female Protagonist",
+      "Religion",
+      "Kemonomimi",
+      "Medieval",
+      "Travel",
+      "Agriculture",
+      "Heterosexual",
+      "Monster Girl",
+      "Politics",
+      "Rural",
+      "Foreign",
+      "Gods"
+    ],
+    "status": "FINISHED",
+    "episodes": 13
+  },
+  "images": [
+    {
+      "url": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx2966-AEULMyYA9WKb.png",
+      "type": "cover",
+      "source": "AniList"
+    },
+    {
+      "url": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/2966-h1ZiL7o7oYPs.jpg",
+      "type": "banner",
+      "source": "AniList"
+    }
+  ],
+  "description": "The peddler Kraft Lawrence travels through the world selling all kinds of things. After visiting a village, he discovers a sleeping girl under the pelts in his cart. She has wolf ears and a tail. The wolf girl explains that she has been called a \"god\", but that her name is Holo and nothing more. Lawrence teases the girl a little, but after hearing more of her story, he is moved and decides to accompany her further north. On their travels the two have many adventures, often getting into trouble, but the bond between them grows stronger."
+}

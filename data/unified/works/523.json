@@ -1,0 +1,51 @@
+{
+  "internalId": 229,
+  "anilistId": 523,
+  "title": "My Neighbor Totoro",
+  "alt_titles": [
+    "Tonari no Totoro",
+    "となりのトトロ"
+  ],
+  "source_ids": {
+    "anime": 523,
+    "manga": null
+  },
+  "metadata": {
+    "popularity": 252042,
+    "averageScore": 80,
+    "formats": [
+      "MOVIE"
+    ],
+    "genres": [
+      "Adventure",
+      "Fantasy",
+      "Slice of Life",
+      "Supernatural"
+    ],
+    "tags": [
+      "Family Life",
+      "Primarily Child Cast",
+      "Rural",
+      "Youkai",
+      "Wilderness",
+      "Female Protagonist",
+      "Urban Fantasy",
+      "Kids"
+    ],
+    "status": "FINISHED",
+    "episodes": 1
+  },
+  "images": [
+    {
+      "url": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx523-fErBvxOHP7IX.jpg",
+      "type": "cover",
+      "source": "AniList"
+    },
+    {
+      "url": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/523-rl12Q0av1fCr.jpg",
+      "type": "banner",
+      "source": "AniList"
+    }
+  ],
+  "description": "Follow the adventures of Satsuki and her four-year-old sister Mei when they move into a new home in the countryside. To their delight they discover that their new neighbor is a mysterious forest spirit called Totoro who can be seen only through the eyes of a child. Totoro introduces them to extraordinary characters, including a cat that doubles as a bus, takes them on a journey through the wonders of nature. \n\n(Source: Disney)"
+}

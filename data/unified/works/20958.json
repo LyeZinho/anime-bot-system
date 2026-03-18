@@ -1,0 +1,66 @@
+{
+  "internalId": 24,
+  "anilistId": 20958,
+  "title": "Attack on Titan Season 2",
+  "alt_titles": [
+    "Shingeki no Kyojin Season 2",
+    "進撃の巨人 Season２"
+  ],
+  "source_ids": {
+    "anime": 20958,
+    "manga": null
+  },
+  "metadata": {
+    "popularity": 655329,
+    "averageScore": 84,
+    "formats": [
+      "TV"
+    ],
+    "genres": [
+      "Action",
+      "Drama",
+      "Fantasy",
+      "Mystery"
+    ],
+    "tags": [
+      "Survival",
+      "Post-Apocalyptic",
+      "Shapeshifting",
+      "Tragedy",
+      "Espionage",
+      "Military",
+      "Kaiju",
+      "Primarily Teen Cast",
+      "Dystopian",
+      "Gore",
+      "Henshin",
+      "Politics",
+      "Revenge",
+      "Anti-Hero",
+      "Ensemble Cast",
+      "Super Power",
+      "Shounen",
+      "Male Protagonist",
+      "Cult",
+      "Coming of Age",
+      "Dissociative Identities",
+      "Kuudere",
+      "Steampunk"
+    ],
+    "status": "FINISHED",
+    "episodes": 12
+  },
+  "images": [
+    {
+      "url": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx20958-HuFJyr54Mmir.jpg",
+      "type": "cover",
+      "source": "AniList"
+    },
+    {
+      "url": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/20958-Y7eQdz9VENBD.jpg",
+      "type": "banner",
+      "source": "AniList"
+    }
+  ],
+  "description": "Eren Jaeger swore to wipe out every last Titan, but in a battle for his life he wound up becoming the thing he hates most. With his new powers, he fights for humanity's freedom facing the monsters that threaten his home. After a bittersweet victory against the Female Titan, Eren finds no time to rest—a horde of Titans is approaching Wall Rose and the battle for humanity continues!\n\n(Source: Funimation)"
+}

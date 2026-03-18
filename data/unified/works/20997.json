@@ -1,0 +1,59 @@
+{
+  "internalId": 55,
+  "anilistId": 20997,
+  "title": "Charlotte",
+  "alt_titles": [
+    "Charlotte(シャーロット)"
+  ],
+  "source_ids": {
+    "anime": 20997,
+    "manga": null
+  },
+  "metadata": {
+    "popularity": 385891,
+    "averageScore": 75,
+    "formats": [
+      "TV"
+    ],
+    "genres": [
+      "Comedy",
+      "Drama",
+      "Romance",
+      "Sci-Fi",
+      "Supernatural"
+    ],
+    "tags": [
+      "Super Power",
+      "Time Manipulation",
+      "Tragedy",
+      "Urban Fantasy",
+      "Primarily Teen Cast",
+      "Urban",
+      "Male Protagonist",
+      "School Club",
+      "School",
+      "Body Swapping",
+      "Amnesia",
+      "Female Protagonist",
+      "Dissociative Identities",
+      "Tsundere",
+      "Survival",
+      "Memory Manipulation"
+    ],
+    "status": "FINISHED",
+    "episodes": 13
+  },
+  "images": [
+    {
+      "url": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx20997-axVYrsIfjtYJ.jpg",
+      "type": "cover",
+      "source": "AniList"
+    },
+    {
+      "url": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/20997-nE9VyUa08vS0.jpg",
+      "type": "banner",
+      "source": "AniList"
+    }
+  ],
+  "description": "The story centers around the special abilities that occur among a small percentage of boys and girls in puberty. Yuu Otosaka uses his power without others knowing, and lives a fairly normal, average school life. Before him suddenly appears a girl, Nao Tomori. Due to his meeting with her, the fate of special power-users will be exposed.\n\n(Source: Anime News Network)"
+}

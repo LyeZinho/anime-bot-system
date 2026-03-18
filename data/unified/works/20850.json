@@ -1,0 +1,57 @@
+{
+  "internalId": 340,
+  "anilistId": 20850,
+  "title": "Tokyo Ghoul √A",
+  "alt_titles": [
+    "Tokyo Ghoul √A",
+    "東京喰種[トーキョーグール]√A"
+  ],
+  "source_ids": {
+    "anime": 20850,
+    "manga": null
+  },
+  "metadata": {
+    "popularity": 368534,
+    "averageScore": 66,
+    "formats": [
+      "TV"
+    ],
+    "genres": [
+      "Action",
+      "Drama",
+      "Horror",
+      "Mystery",
+      "Psychological",
+      "Supernatural"
+    ],
+    "tags": [
+      "Anti-Hero",
+      "Body Horror",
+      "Super Power",
+      "Gore",
+      "Military",
+      "Detective",
+      "Police",
+      "Urban Fantasy",
+      "Seinen",
+      "Male Protagonist",
+      "Urban",
+      "Primarily Adult Cast"
+    ],
+    "status": "FINISHED",
+    "episodes": 12
+  },
+  "images": [
+    {
+      "url": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx20850-glDf9EMKeCwe.jpg",
+      "type": "cover",
+      "source": "AniList"
+    },
+    {
+      "url": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/20850-YjtRXQkNl0xz.jpg",
+      "type": "banner",
+      "source": "AniList"
+    }
+  ],
+  "description": "The second season of Tokyo Ghoul.\n\nThe ghouls of Anteiku invaded the Aogiri's site in order to rescue Ken Kaneki who is being tortured. Due to provocation, he unleashed greater power enough to defeat Yamori. To become stronger, he decided to join Aogiri and left Anteiku. Ghoul investigators also making their moves by collecting information about the eye-patched ghoul - Ken Kaneki.\n\n(Source: Anime News Network)"
+}

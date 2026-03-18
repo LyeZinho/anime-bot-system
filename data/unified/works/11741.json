@@ -1,0 +1,59 @@
+{
+  "internalId": 104,
+  "anilistId": 11741,
+  "title": "Fate/Zero Season 2",
+  "alt_titles": [
+    "Fate/Zero 2nd Season",
+    "Fate/Zero 2ndシーズン"
+  ],
+  "source_ids": {
+    "anime": 11741,
+    "manga": null
+  },
+  "metadata": {
+    "popularity": 223582,
+    "averageScore": 84,
+    "formats": [
+      "TV"
+    ],
+    "genres": [
+      "Action",
+      "Drama",
+      "Fantasy",
+      "Supernatural"
+    ],
+    "tags": [
+      "Battle Royale",
+      "Tragedy",
+      "Magic",
+      "Philosophy",
+      "Mythology",
+      "Urban Fantasy",
+      "Anti-Hero",
+      "War",
+      "Ensemble Cast",
+      "Primarily Adult Cast",
+      "Religion",
+      "Spearplay",
+      "Death Game",
+      "Body Horror",
+      "Swordplay",
+      "Gore"
+    ],
+    "status": "FINISHED",
+    "episodes": 12
+  },
+  "images": [
+    {
+      "url": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx11741-oEy1fJHYm2zJ.jpg",
+      "type": "cover",
+      "source": "AniList"
+    },
+    {
+      "url": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/11741-TWwZCgsK5aXh.jpg",
+      "type": "banner",
+      "source": "AniList"
+    }
+  ],
+  "description": "As the Fourth Holy Grail War rages on with no clear victor in sight, the remaining Servants and their Masters are called upon by Church supervisor Risei Kotomine, in order to band together and confront an impending threat that could unravel the Grail War and bring about the destruction of Fuyuki City. The uneasy truce soon collapses as Masters demonstrate that they will do anything in their power, no matter how despicable, to win.\n\nSeeds of doubt are sown between Kiritsugu Emiya and Saber, his Servant, as their conflicting ideologies on heroism and chivalry clash. Meanwhile, an ominous bond forms between Kirei Kotomine, who still seeks to find his purpose in life, and one of the remaining Servants. As the countdown to the end of the war reaches zero, the cost of winning begins to blur the line between victory and defeat.\n\n(Source: MAL Rewrite)"
+}

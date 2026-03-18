@@ -1,0 +1,53 @@
+{
+  "internalId": 284,
+  "anilistId": 151807,
+  "title": "Solo Leveling",
+  "alt_titles": [
+    "Ore dake Level Up na Ken",
+    "俺だけレベルアップな件"
+  ],
+  "source_ids": {
+    "anime": 151807,
+    "manga": null
+  },
+  "metadata": {
+    "popularity": 355278,
+    "averageScore": 81,
+    "formats": [
+      "TV"
+    ],
+    "genres": [
+      "Action",
+      "Adventure",
+      "Fantasy"
+    ],
+    "tags": [
+      "Dungeon",
+      "Male Protagonist",
+      "Urban Fantasy",
+      "Super Power",
+      "Magic",
+      "Necromancy",
+      "Cultivation",
+      "Survival",
+      "War",
+      "Gore",
+      "Anti-Hero"
+    ],
+    "status": "FINISHED",
+    "episodes": 12
+  },
+  "images": [
+    {
+      "url": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx151807-it355ZgzquUd.png",
+      "type": "cover",
+      "source": "AniList"
+    },
+    {
+      "url": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/151807-37yfQA3ym8PA.jpg",
+      "type": "banner",
+      "source": "AniList"
+    }
+  ],
+  "description": "They say whatever doesn’t kill you makes you stronger, but that’s not the case for the world’s weakest hunter Seong Jin-U. After being brutally slaughtered by monsters in a high-ranking dungeon, Jin-U came back with the System, a program only he could see, that’s leveling him up in every way. Now, he’s inspired to discover the secrets behind his powers and the dungeon that spawned them.\n\n(Source: Crunchyroll)"
+}

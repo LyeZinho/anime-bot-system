@@ -1,0 +1,18 @@
+{
+  "anilistId": 23461,
+  "slug": "foo",
+  "name": "Foo",
+  "alt_names": [
+    "フー",
+    "Fu"
+  ],
+  "description": "One of [Ling Yao](https://anilist.co/character/3293/)'s bodyguards.",
+  "role": "supporting",
+  "gender": null,
+  "imageUrl": "https://s4.anilist.co/file/anilistcdn/character/large/b23461-WxC1ACNKQC4Y.jpg",
+  "popularity": 0,
+  "score": 0,
+  "workId": 120,
+  "rarity": "epic",
+  "categories": {}
+}
