@@ -17,13 +17,13 @@
   "scripts": {
     "build": "tsc",
     "db:generate": "drizzle-kit generate",
-    "db:push": "drizzle-kit push",
+    "db:push": "drizzle-kit push --force",
     "db:migrate": "drizzle-kit migrate",
     "db:studio": "drizzle-kit studio",
-    "db:seed": "tsx src/seed.ts",
-    "db:seed:categories": "tsx src/seed-categories.ts",
-    "db:seed:characters": "tsx src/seed-characters.ts",
-    "db:seed:works": "tsx src/seed-works.ts"
+    "db:seed": "tsx --env-file=../../.env src/seed.ts",
+    "db:seed:categories": "tsx --env-file=../../.env src/seed-categories.ts",
+    "db:seed:characters": "tsx --env-file=../../.env src/seed-characters.ts",
+    "db:seed:works": "tsx --env-file=../../.env src/seed-works.ts"
   },
   "dependencies": {
     "drizzle-orm": "^0.39.0",
@@ -31,6 +31,7 @@
   },
   "devDependencies": {
     "@types/node": "^22.0.0",
+    "dotenv": "^16.3.1",
     "drizzle-kit": "^0.30.0",
     "tsx": "^4.19.0",
     "typescript": "^5.6.0"

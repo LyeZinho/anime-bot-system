@@ -58,7 +58,7 @@ export const userServers = pgTable('user_servers', {
 
 // Works (unified anime/manga)
 export const works = pgTable('works', {
-  id: varchar('id', { length: 100 }).primaryKey(), // internalId
+  id: varchar('id', { length: 255 }).primaryKey(), // internalId
   title: varchar('title', { length: 255 }).notNull(),
   altTitles: jsonb('alt_titles').$type<string[]>(),
   sourceAnimeId: integer('source_anime_id'),
