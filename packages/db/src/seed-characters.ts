@@ -45,14 +45,21 @@ export async function seedCharacters() {
   let errors = 0;
   for (const file of files) {
     try {
-      const anilistId = parseInt(file.replace('.json', ''));
       const data = JSON.parse(readFileSync(join(dataDir, file), 'utf-8'));
+      
+      // Use anilistId from data file, not from filename
+      const anilistId = data.anilistId;
+      
+      // Validate required fields
+      if (!anilistId || !data.slug) {
+        throw new Error(`Missing required fields: anilistId=${anilistId}, slug=${data.slug}`);
+      }
 
       await db
         .insert(characters)
         .values({
           anilistId,
-          slug: data.id,
+          slug: data.slug,
           name: data.name,
           altNames: data.alt_names,
           description: data.description,
