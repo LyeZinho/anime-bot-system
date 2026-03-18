@@ -1,13 +1,24 @@
 <script lang="ts">
   import { goto } from '$app/navigation';
+  import * as authLib from '$lib/auth';
   
   let isLoading = $state(false);
   
-  async function handleDiscordLogin() {
+  function handleDiscordLogin() {
     isLoading = true;
-    // Simulate Discord OAuth flow
-    await new Promise(resolve => setTimeout(resolve, 1500));
-    goto('/profile');
+    
+    // Generate CSRF state token
+    const state = Math.random().toString(36).substring(2, 15) + 
+                  Math.random().toString(36).substring(2, 15);
+    
+    // Store state in sessionStorage for validation after callback
+    if (typeof window !== 'undefined') {
+      sessionStorage.setItem('oauth_state', state);
+    }
+    
+    // Redirect to Discord OAuth authorization URL
+    const authUrl = authLib.getDiscordAuthUrl(state);
+    window.location.href = authUrl;
   }
   
   function continueAsGuest() {

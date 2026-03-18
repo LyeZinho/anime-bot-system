@@ -97,6 +97,10 @@ services:
     environment:
       PUBLIC_API_URL: ${API_URL:-https://api.your-domain.com}
       PUBLIC_DASHBOARD_URL: ${DASHBOARD_URL:-https://your-domain.com}
+      DISCORD_CLIENT_ID: ${DISCORD_CLIENT_ID}
+      DISCORD_CLIENT_SECRET: ${DISCORD_CLIENT_SECRET}
+      OAUTH_REDIRECT_URI: ${OAUTH_REDIRECT_URI}
+      JWT_SECRET: ${JWT_SECRET}
     networks:
       - anime-bot-network
     labels:

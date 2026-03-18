@@ -3,13 +3,13 @@
   import Navigation from '$lib/components/Navigation.svelte';
   import BackgroundSVG from '$lib/components/BackgroundSVG.svelte';
   
-  let { children } = $props();
+  let { children, data } = $props();
 </script>
 
 <BackgroundSVG />
 
 <div class="app-container">
-  <Navigation />
+  <Navigation user={data?.user} />
   
   <main>
     {@render children()}

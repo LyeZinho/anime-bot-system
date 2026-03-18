@@ -1,17 +1,31 @@
 <script lang="ts">
   import { page } from '$app/stores';
   
+  interface Props {
+    user?: { id: string; username: string; avatar?: string | null } | null;
+  }
+  
+  let { user }: Props = $props();
+  
   const navItems = [
     { href: '/', label: 'Home', icon: 'home' },
     { href: '/characters', label: 'Characters', icon: 'users' },
     { href: '/rankings', label: 'Rankings', icon: 'trophy' },
     { href: '/statistics', label: 'Stats', icon: 'chart' },
-    { href: '/profile', label: 'Profile', icon: 'user' },
   ];
   
   function isActive(href: string, pathname: string): boolean {
     if (href === '/') return pathname === '/';
     return pathname.startsWith(href);
+  }
+  
+  async function handleLogout() {
+    try {
+      await fetch('/auth/logout', { method: 'POST' });
+      window.location.href = '/login';
+    } catch (e) {
+      console.error('Logout failed:', e);
+    }
   }
 </script>
 
@@ -69,14 +83,36 @@
       {/each}
     </div>
     
-    <a href="/login" class="btn-login">
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-        <path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"/>
-        <polyline points="10 17 15 12 10 7"/>
-        <line x1="15" y1="12" x2="3" y2="12"/>
-      </svg>
-      <span class="login-text">LOGIN</span>
-    </a>
+    {#if user}
+      <div class="user-section">
+        <a href="/profile" class="user-info">
+          <span class="user-avatar">
+            {#if user.avatar}
+              <img src={user.avatar} alt={user.username} />
+            {:else}
+              <span class="avatar-placeholder">{user.username.charAt(0).toUpperCase()}</span>
+            {/if}
+          </span>
+          <span class="user-name">{user.username}</span>
+        </a>
+        <button onclick={handleLogout} class="btn-logout">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/>
+            <polyline points="16 17 21 12 16 7"/>
+            <line x1="21" y1="12" x2="9" y2="12"/>
+          </svg>
+        </button>
+      </div>
+    {:else}
+      <a href="/login" class="btn-login">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"/>
+          <polyline points="10 17 15 12 10 7"/>
+          <line x1="15" y1="12" x2="3" y2="12"/>
+        </svg>
+        <span class="login-text">LOGIN</span>
+      </a>
+    {/if}
   </div>
 </nav>
 
@@ -184,6 +220,71 @@
   .btn-login:hover {
     transform: translate(-2px, -2px);
     box-shadow: var(--shadow-brutal-lg);
+  }
+  
+  .user-section {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  
+  .user-info {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--bg-card);
+    border: var(--border-brutal);
+    box-shadow: var(--shadow-brutal);
+    padding: 4px 12px 4px 4px;
+    text-decoration: none;
+  }
+  
+  .user-avatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    overflow: hidden;
+    background: var(--accent-purple);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .user-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .avatar-placeholder {
+    font-size: 14px;
+    font-weight: 900;
+    color: #000;
+  }
+  
+  .user-name {
+    font-size: 12px;
+    font-weight: 700;
+    color: white;
+    text-transform: uppercase;
+  }
+  
+  .btn-logout {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--bg-card);
+    color: white;
+    border: var(--border-brutal);
+    box-shadow: var(--shadow-brutal);
+    padding: 8px;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+  }
+  
+  .btn-logout:hover {
+    background: var(--accent-pink);
+    color: #000;
   }
   
   @media (max-width: 768px) {
