@@ -1,4 +1,6 @@
-const API_BASE = 'http://localhost:3001';
+import { env } from '$env/dynamic/public';
+
+const API_BASE = env.PUBLIC_API_URL || 'http://localhost:3001';
 
 interface FetchOptions {
   method?: string;

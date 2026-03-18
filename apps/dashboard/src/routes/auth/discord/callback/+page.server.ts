@@ -1,11 +1,13 @@
 import { redirect } from '@sveltejs/kit';
 import type { PageServerLoad } from './$types';
+import { env } from '$env/dynamic/private';
 
-const DISCORD_CLIENT_ID = process.env.DISCORD_CLIENT_ID;
-const DISCORD_CLIENT_SECRET = process.env.DISCORD_CLIENT_SECRET;
-const REDIRECT_URI = process.env.NODE_ENV === 'production' 
+const DISCORD_CLIENT_ID = env.DISCORD_CLIENT_ID;
+const DISCORD_CLIENT_SECRET = env.DISCORD_CLIENT_SECRET;
+const PUBLIC_API_URL = env.PUBLIC_API_URL || 'http://localhost:3001';
+const REDIRECT_URI = env.NODE_ENV === 'production' 
   ? 'https://nazuna.devscafe.org/auth/discord/callback'
-  : 'http://localhost:3001/auth/discord/callback';
+  : `${PUBLIC_API_URL}/auth/discord/callback`;
 
 export const load: PageServerLoad = async ({ url, cookies }) => {
   const code = url.searchParams.get('code');
