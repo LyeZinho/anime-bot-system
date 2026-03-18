@@ -1,5 +1,6 @@
 import { Client, GatewayIntentBits, Partials, REST, Routes, SlashCommandBuilder } from 'discord.js';
 import { config } from 'dotenv';
+import { join } from 'path';
 import { RouletteCommand } from './commands/roulette';
 import { CollectionCommand } from './commands/collection';
 import { FavoriteCommand } from './commands/favorite';
@@ -10,11 +11,23 @@ import { SearchCommand } from './commands/search';
 import { ApiService } from './services/api';
 import { Logger } from './services/logger';
 
-config();
+config({ path: join(__dirname, '../../.env') });
 
-const DISCORD_TOKEN = process.env.DISCORD_TOKEN!;
-const CLIENT_ID = process.env.DISCORD_CLIENT_ID!;
-const API_URL = process.env.API_URL || 'http://localhost:3000/api/v1';
+const DISCORD_TOKEN = process.env.DISCORD_BOT_TOKEN;
+const CLIENT_ID = process.env.DISCORD_CLIENT_ID;
+
+if (!DISCORD_TOKEN) {
+  console.warn('[BOT] DISCORD_BOT_TOKEN not set — bot will not start');
+  console.warn('[BOT] Set it in .env to enable the Discord bot');
+  process.exit(0);
+}
+
+if (!CLIENT_ID) {
+  console.warn('[BOT] DISCORD_CLIENT_ID not set — bot will not start');
+  process.exit(0);
+}
+
+const API_URL = process.env.API_URL || 'http://localhost:3071/api/v1';
 
 const commands = [
   new SlashCommandBuilder()
