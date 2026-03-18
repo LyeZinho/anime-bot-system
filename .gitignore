@@ -39,15 +39,17 @@ coverage/
 *.temp
 .cache/
 
+# Scripts
+!scripts/start-dev.sh
+scripts/
+
 # Data (keep sample structure, ignore actual data files)
 data/unified/*.json
 data/unified/*/*.json
 data/unified/*/*/*.json
 data/raw/
-scripts/
 
 # Database
-*.db
 *.sqlite
 
 # Docker

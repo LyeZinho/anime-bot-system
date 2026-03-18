@@ -5,6 +5,7 @@
     "packages/*"
   ],
   "scripts": {
+    "start:dev": "./scripts/start-dev.sh",
     "build": "turbo build",
     "dev": "turbo dev",
     "db:generate": "turbo db:generate",

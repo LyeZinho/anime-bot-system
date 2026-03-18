@@ -1,5 +1,21 @@
 # Guia de Desenvolvimento
 
+## Quick Start
+
+```bash
+# 1. Copy and fill in your secrets
+cp .env.example .env
+# Edit .env with your DISCORD_*, JWT_SECRET, POSTGRES_PASSWORD
+
+# 2. Start everything (infra + dev servers) - one command
+./scripts/start-dev.sh
+
+# Or via pnpm
+pnpm start:dev
+```
+
+---
+
 ## Setup do Ambiente
 
 \`\`\`bash
