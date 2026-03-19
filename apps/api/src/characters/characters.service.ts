@@ -19,54 +19,59 @@ export interface CharacterFilter {
 @Injectable()
 export class CharactersService {
   async findAll(filters: CharacterFilter) {
-    const { page = 1, limit = 50, search, gender, role, personality, hairColor, eyeColor, bodyType, archetype, genre, format } = filters;
+    const { page = 1, limit = 50, search, gender, role } = filters;
     const offset = (page - 1) * limit;
 
-    let conditions = [];
-    let categoryConditions = [];
+    const params: (string | number)[] = [];
+    const parts: string[] = [];
 
     if (search) {
-      conditions.push(sql`${characters.name} ILIKE ${`%${search}%`}`);
+      params.push('%' + search + '%');
+      parts.push(`name ILIKE $${params.length}`);
     }
     if (gender) {
-      conditions.push(eq(characters.gender, gender as any));
+      params.push(gender.toLowerCase());
+      parts.push(`gender = $${params.length}`);
     }
     if (role) {
-      conditions.push(eq(characters.role, role as any));
+      params.push(role.toLowerCase());
+      parts.push(`role = $${params.length}`);
     }
 
-    const baseQuery = db.select({
-      anilistId: characters.anilistId,
-      slug: characters.slug,
-      name: characters.name,
-      altNames: characters.altNames,
-      description: characters.description,
-      gender: characters.gender,
-      role: characters.role,
-      imageUrl: characters.imageUrl,
-      popularity: characters.popularity,
-      score: characters.score,
-      workId: characters.workId,
-    }).from(characters);
+    const whereClause = parts.length > 0 ? ' WHERE ' + parts.join(' AND ') : '';
+    const pg = (db as any).$client;
 
-    if (categoryConditions.length > 0) {
-      
-    }
+    const [countResult] = await pg.unsafe(
+      'SELECT COUNT(*) as cnt FROM characters' + whereClause,
+      params,
+    );
+    const total = Number(countResult?.cnt ?? 0);
 
-    const result = await baseQuery
-      .orderBy(desc(characters.popularity))
-      .limit(limit)
-      .offset(offset);
-
-    const total = await db.select({ count: sql<number>`count(*)` }).from(characters);
+    const rows = await pg.unsafe(
+      'SELECT anilist_id, slug, name, alt_names, description, gender, role, image_url, popularity, score, work_id FROM characters'
+      + whereClause + ' ORDER BY popularity DESC LIMIT ' + limit + ' OFFSET ' + offset,
+      params,
+    );
 
     return {
-      data: result,
+      data: (rows || []).map((row: any) => ({
+        anilistId: row.anilist_id,
+        slug: row.slug,
+        name: row.name,
+        altNames: row.alt_names,
+        description: row.description,
+        gender: row.gender,
+        role: row.role,
+        imageUrl: row.image_url,
+        popularity: row.popularity,
+        score: row.score,
+        workId: row.work_id,
+      })),
       pagination: {
         page,
         limit,
-        total: total[0]?.count || 0,
-        totalPages: Math.ceil((total[0]?.count || 0) / limit),
+        total,
+        totalPages: Math.ceil(total / limit),
       },
     };
   }
@@ -127,14 +132,12 @@ export class CharactersService {
       .from(userFavorites)
       .where(eq(userFavorites.characterId, anilistId));
 
-    const [globalRank] = await db.select({ rank: sql<number>`rank()` })
+    const [globalRank] = await db.select({ count: count() })
       .from(characters)
-      .orderBy(desc(characters.popularity))
-      .where(sql`${characters.popularity} >= ${character.popularity}`)
-      .limit(1);
+      .where(sql`${characters.popularity} > ${character.popularity}`);
 
     return {
-      globalRank: globalRank?.rank || 0,
+      globalRank: (globalRank?.count || 0) + 1,
       totalClaims: totalClaims?.count || 0,
       totalFavorites: totalFavorites?.count || 0,
     };
@@ -193,8 +196,8 @@ export class CharactersService {
         .from(userCollections)
         .where(and(
           eq(userCollections.characterId, anilistId),
-          sql`${userCollections.obtainedAt} >= ${monthStart}`,
-          sql`${userCollections.obtainedAt} <= ${monthEnd}`
+          sql`${userCollections.obtainedAt} >= ${monthStart.toISOString()}`,
+          sql`${userCollections.obtainedAt} < ${monthEnd.toISOString()}`
         ));
 
       volumes.push({

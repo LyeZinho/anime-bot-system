@@ -3,8 +3,6 @@ import { ConfigService } from '@nestjs/config';
 import { exec } from 'child_process';
 import { promisify } from 'util';
 import { join } from 'path';
-import { resolve } from 'path';
-import { config } from 'dotenv';
 import { count } from 'drizzle-orm';
 import { categoryTypes } from '@anime-bot/db/schema';
 import { db } from '@anime-bot/db';

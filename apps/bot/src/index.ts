@@ -11,7 +11,7 @@ import { SearchCommand } from './commands/search';
 import { ApiService } from './services/api';
 import { Logger } from './services/logger';
 
-config({ path: join(__dirname, '../../.env') });
+config({ path: join(__dirname, '../../../.env') });
 
 const DISCORD_TOKEN = process.env.DISCORD_BOT_TOKEN;
 const CLIENT_ID = process.env.DISCORD_CLIENT_ID;
