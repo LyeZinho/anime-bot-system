@@ -21,6 +21,11 @@ export class DatabaseMigrationService implements OnModuleInit {
 
   private async seedIfEmpty() {
     try {
+      if (process.env.FORCE_RESEED === 'true') {
+        this.logger.log('FORCE_RESEED=true — running seeds unconditionally...');
+        await this.seedDatabase();
+        return;
+      }
       const [result] = await db.select({ count: count() }).from(categoryTypes).limit(1);
       if (result && result.count > 0) {
         this.logger.log('Database already seeded, skipping...');

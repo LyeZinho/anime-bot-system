@@ -59,7 +59,9 @@ export async function seedCharacters() {
       const data = JSON.parse(readFileSync(join(dataDir, file), 'utf-8')) as {
         anilist_id?: unknown; anilistId?: unknown;
         slug?: string; name: string; alt_names?: string[]; description?: string;
-        gender?: string; role?: string; images?: { url?: string }[];
+        gender?: string; role?: string; rarity?: string;
+        imageUrl?: string; popularity?: number; score?: number; workId?: number | string;
+        images?: { url?: string }[];
         works?: { internalId: string }[];
         categories?: {
           demographics?: { gender?: string }; work?: { popularity?: number; score?: number };
@@ -86,9 +88,9 @@ export async function seedCharacters() {
           description: data.description,
           gender: data.gender as any,
           role: data.role as any,
-          imageUrl: data.images?.[0]?.url,
-          popularity: data.categories?.work?.popularity || 0,
-          score: data.categories?.work?.score || 0,
+          imageUrl: data.imageUrl ?? data.images?.[0]?.url,
+          popularity: data.popularity ?? data.categories?.work?.popularity ?? 0,
+          score: data.score ?? data.categories?.work?.score ?? 0,
           workId: data.works?.[0]?.internalId,
         })
         .onConflictDoUpdate({
@@ -96,10 +98,13 @@ export async function seedCharacters() {
           set: {
             name: data.name,
             altNames: data.alt_names,
+            description: data.description,
             gender: data.gender as any,
             role: data.role as any,
-            imageUrl: data.images?.[0]?.url,
-            popularity: data.categories?.work?.popularity || 0,
+            imageUrl: data.imageUrl ?? data.images?.[0]?.url,
+            popularity: data.popularity ?? data.categories?.work?.popularity ?? 0,
+            score: data.score ?? data.categories?.work?.score ?? 0,
+            workId: data.works?.[0]?.internalId,
           }
         });
 
