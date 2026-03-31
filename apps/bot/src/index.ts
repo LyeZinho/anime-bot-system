@@ -13,19 +13,19 @@ import { Logger } from './services/logger';
 
 config({ path: join(__dirname, '../../../.env') });
 
-const DISCORD_TOKEN = process.env.DISCORD_BOT_TOKEN;
-const CLIENT_ID = process.env.DISCORD_CLIENT_ID;
-
-if (!DISCORD_TOKEN) {
+if (!process.env.DISCORD_BOT_TOKEN) {
   console.warn('[BOT] DISCORD_BOT_TOKEN not set — bot will not start');
   console.warn('[BOT] Set it in .env to enable the Discord bot');
   process.exit(0);
 }
 
-if (!CLIENT_ID) {
+if (!process.env.DISCORD_CLIENT_ID) {
   console.warn('[BOT] DISCORD_CLIENT_ID not set — bot will not start');
   process.exit(0);
 }
+
+const DISCORD_TOKEN: string = process.env.DISCORD_BOT_TOKEN;
+const CLIENT_ID: string = process.env.DISCORD_CLIENT_ID;
 
 const API_URL = process.env.API_URL || 'http://localhost:3071/api/v1';
 
