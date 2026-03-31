@@ -1,4 +1,4 @@
-import { Client, GatewayIntentBits, Partials, REST, Routes, SlashCommandBuilder } from 'discord.js';
+import { Client, GatewayIntentBits, Partials, REST, Routes, SlashCommandBuilder, ActionRowBuilder, ButtonBuilder, ButtonStyle } from 'discord.js';
 import { config } from 'dotenv';
 import { join } from 'path';
 import { RouletteCommand } from './commands/roulette';
@@ -107,37 +107,77 @@ async function main() {
   });
 
   client.on('interactionCreate', async (interaction) => {
-    if (!interaction.isChatInputCommand()) return;
+    if (interaction.isChatInputCommand()) {
+      const { commandName } = interaction;
 
-    const { commandName, user, options, guildId } = interaction;
-
-    try {
-      switch (commandName) {
-        case 'roulette':
-          await RouletteCommand.execute(interaction, api, logger);
-          break;
-        case 'collection':
-          await CollectionCommand.execute(interaction, api, logger);
-          break;
-        case 'favorite':
-          await FavoriteCommand.execute(interaction, api, logger);
-          break;
-        case 'profile':
-          await ProfileCommand.execute(interaction, api, logger);
-          break;
-        case 'leaderboard':
-          await LeaderboardCommand.execute(interaction, api, logger);
-          break;
-        case 'gift':
-          await GiftCommand.execute(interaction, api, logger);
-          break;
-        case 'search':
-          await SearchCommand.execute(interaction, api, logger);
-          break;
+      try {
+        switch (commandName) {
+          case 'roulette':
+            await RouletteCommand.execute(interaction, api, logger);
+            break;
+          case 'collection':
+            await CollectionCommand.execute(interaction, api, logger);
+            break;
+          case 'favorite':
+            await FavoriteCommand.execute(interaction, api, logger);
+            break;
+          case 'profile':
+            await ProfileCommand.execute(interaction, api, logger);
+            break;
+          case 'leaderboard':
+            await LeaderboardCommand.execute(interaction, api, logger);
+            break;
+          case 'gift':
+            await GiftCommand.execute(interaction, api, logger);
+            break;
+          case 'search':
+            await SearchCommand.execute(interaction, api, logger);
+            break;
+        }
+      } catch (error) {
+        logger.error(`Command ${commandName} failed`, error);
+        await interaction.reply({ content: '❌ An error occurred', ephemeral: true });
       }
-    } catch (error) {
-      logger.error(`Command ${commandName} failed`, error);
-      await interaction.reply({ content: '❌ An error occurred', ephemeral: true });
+
+    } else if (interaction.isButton()) {
+      const { customId, user, guildId } = interaction;
+
+      if (customId === 'spin_again') {
+        try {
+          await RouletteCommand.executeButton(interaction, api, logger);
+        } catch (error) {
+          logger.error('Spin again failed', error);
+        }
+
+      } else if (customId.startsWith('keep_')) {
+        const characterId = Number(customId.replace('keep_', ''));
+
+        await interaction.deferReply({ ephemeral: true });
+
+        try {
+          await api.addToCollection(user.id, guildId || '', characterId);
+
+          const disabledRow = new ActionRowBuilder<ButtonBuilder>()
+            .addComponents(
+              new ButtonBuilder()
+                .setCustomId(customId)
+                .setLabel('❤️ Claimed!')
+                .setStyle(ButtonStyle.Success)
+                .setDisabled(true),
+              new ButtonBuilder()
+                .setCustomId('spin_again')
+                .setLabel('🎲 Spin Again')
+                .setStyle(ButtonStyle.Secondary)
+                .setDisabled(true),
+            );
+
+          await interaction.message.edit({ components: [disabledRow] });
+          await interaction.editReply({ content: '✅ Character added to your collection!' });
+        } catch (error) {
+          logger.error('Keep character failed', error);
+          await interaction.editReply({ content: '❌ Failed to claim character. You might already have them!' });
+        }
+      }
     }
   });
 
