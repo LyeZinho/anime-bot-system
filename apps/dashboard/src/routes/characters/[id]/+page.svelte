@@ -42,7 +42,6 @@
         <img 
           src={char.imageUrl || char.image || `https://picsum.photos/seed/${char.name}/600/800`}
           alt={char.name}
-          referrerPolicy="no-referrer"
         />
       </div>
       <div class="image-shadow"></div>
@@ -286,7 +285,6 @@
               <img 
                 src={relatedChar.imageUrl || relatedChar.image || `https://picsum.photos/seed/${relatedChar.name}/600/800`}
                 alt={relatedChar.name}
-                referrerPolicy="no-referrer"
               />
             </div>
             <div class="related-info">

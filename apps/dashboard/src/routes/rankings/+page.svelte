@@ -65,7 +65,6 @@
           <img 
             src={char.imageUrl || char.image || `https://picsum.photos/seed/${char.name}/600/800`}
             alt={char.name}
-            referrerPolicy="no-referrer"
           />
         </div>
         

@@ -30,7 +30,6 @@
       src={displayImage} 
       alt={name}
       loading="lazy"
-      referrerPolicy="no-referrer"
     />
     
     {#if rank}
